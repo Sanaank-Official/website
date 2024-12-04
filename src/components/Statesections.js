@@ -60,7 +60,7 @@ const StatsSection = () => {
 							data-target="2024">
 							0
 						</h3>
-						<p>Year we've founded</p>
+						<p>Year we&apos;ve founded</p>
 					</div>
 					<div>
 						<h3
