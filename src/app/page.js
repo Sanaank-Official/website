@@ -2,7 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-
+import {
+  FaMusic,
+  FaListAlt,
+  FaStar,
+  FaHeartbeat,
+  FaRandom,
+  FaClock,
+} from "react-icons/fa";
 const Home = () => {
 	const [textIndex, setTextIndex] = useState(0);
 	const focusText = "Help to improve focus for more productive";
@@ -64,121 +71,108 @@ const Home = () => {
 			</div>
 
 			<div className="bg-[rgb(240,244,253)] py-20">
-				{" "}
-				{/* Increased section height */}
-				<div className="container mx-auto px-8 md:px-16 lg:px-24">
-					{/* Discover Section */}
-					<div className="text-center mb-6">
-						<span className="text-sm font-bold text-yellow-500	 bg-yellow-100 py-1 px-3 rounded-md inline-block">
-							Discover
-						</span>
-					</div>
-					{/* Top Features Heading */}
-					<h2 className="text-4xl font-bold text-center mb-6 text-gray-800">
-						Top Features
-					</h2>
-					{/* Underline */}
-					<div className="w-20 h-1 bg-yellow-500 mx-auto mb-12"></div>
-					{/* Features Grid */}
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-						{" "}
-						{/* Increased gap between rows */}
-						{/* Feature 1 */}
-						<div className="flex items-center gap-6">
-							{" "}
-							{/* Closer spacing */}
-							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
-								<i className="fas fa-music"></i> {/* Icon */}
-							</div>
-							<div>
-								<h3 className="text-lg font-bold text-gray-800 text-left">
-									HD Sounds
-								</h3>
-								<p className="text-base text-gray-600 text-left">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit.
-								</p>
-							</div>
-						</div>
-						{/* Feature 2 */}
-						<div className="flex items-center gap-6">
-							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
-								<i className="fas fa-list-alt"></i> {/* Icon */}
-							</div>
-							<div>
-								<h3 className="text-lg font-bold text-gray-800 text-left">
-									Playlist
-								</h3>
-								<p className="text-base text-gray-600 text-left">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit.
-								</p>
-							</div>
-						</div>
-						{/* Feature 3 */}
-						<div className="flex items-center gap-6">
-							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
-								<i className="fas fa-star"></i> {/* Icon */}
-							</div>
-							<div>
-								<h3 className="text-lg font-bold text-gray-800 text-left">
-									Favorites
-								</h3>
-								<p className="text-base text-gray-600 text-left">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit.
-								</p>
-							</div>
-						</div>
-						{/* Feature 4 */}
-						<div className="flex items-center gap-6">
-							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
-								<i className="fas fa-heartbeat"></i>{" "}
-								{/* Icon */}
-							</div>
-							<div>
-								<h3 className="text-lg font-bold text-gray-800 text-left">
-									Mood Detector
-								</h3>
-								<p className="text-base text-gray-600 text-left">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit.
-								</p>
-							</div>
-						</div>
-						{/* Feature 5 */}
-						<div className="flex items-center gap-6">
-							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
-								<i className="fas fa-random"></i> {/* Icon */}
-							</div>
-							<div>
-								<h3 className="text-lg font-bold text-gray-800 text-left">
-									Shuffle
-								</h3>
-								<p className="text-base text-gray-600 text-left">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit.
-								</p>
-							</div>
-						</div>
-						{/* Feature 6 */}
-						<div className="flex items-center gap-6">
-							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
-								<i className="fas fa-clock"></i> {/* Icon */}
-							</div>
-							<div>
-								<h3 className="text-lg font-bold text-gray-800 text-left">
-									Timer
-								</h3>
-								<p className="text-base text-gray-600 text-left">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+      <div className="container mx-auto px-8 md:px-16 lg:px-24">
+        {/* Discover Section */}
+        <div className="text-center mb-6">
+          <span className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md inline-block">
+            Discover
+          </span>
+        </div>
+        {/* Top Features Heading */}
+        <h2 className="text-4xl font-bold text-center mb-6 text-gray-800">
+          Top Features
+        </h2>
+        {/* Underline */}
+        <div className="w-20 h-1 bg-yellow-500 mx-auto mb-12"></div>
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {/* Feature 1 */}
+          <div className="flex items-center gap-6">
+            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
+              <FaMusic />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-800 text-left">
+                HD Sounds
+              </h3>
+              <p className="text-base text-gray-600 text-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+          {/* Feature 2 */}
+          <div className="flex items-center gap-6">
+            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
+              <FaListAlt />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-800 text-left">
+                Playlist
+              </h3>
+              <p className="text-base text-gray-600 text-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+          {/* Feature 3 */}
+          <div className="flex items-center gap-6">
+            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
+              <FaStar />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-800 text-left">
+                Favorites
+              </h3>
+              <p className="text-base text-gray-600 text-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+          {/* Feature 4 */}
+          <div className="flex items-center gap-6">
+            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
+              <FaHeartbeat />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-800 text-left">
+                Mood Detector
+              </h3>
+              <p className="text-base text-gray-600 text-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+          {/* Feature 5 */}
+          <div className="flex items-center gap-6">
+            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
+              <FaRandom />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-800 text-left">
+                Shuffle
+              </h3>
+              <p className="text-base text-gray-600 text-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+          {/* Feature 6 */}
+          <div className="flex items-center gap-6">
+            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
+              <FaClock />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-800 text-left">
+                Timer
+              </h3>
+              <p className="text-base text-gray-600 text-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 			{/* Features Section */}
 <div className="bg-white py-16 flex justify-center items-center">
