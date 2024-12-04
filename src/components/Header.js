@@ -9,14 +9,13 @@ export default function Header() {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			if (window.scrollY > 0) {
-				setIsScrolled(true);
-			} else {
-				setIsScrolled(false);
-			}
+			setIsScrolled(window.scrollY > 0);
 		};
 
+		// Run handleScroll on mount to set initial state correctly
+		handleScroll();
 		window.addEventListener("scroll", handleScroll);
+
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
