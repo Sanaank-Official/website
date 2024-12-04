@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useInView, useAnimation , AnimatePresence } from "framer-motion";
 import FAQSection from '../components/FAQ';
+import TypingEffect from "../components/TypingEffect";
 import StateSection from '../components/Statesections';
 import {
   FaMusic,
@@ -34,106 +35,23 @@ const itemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.90,
       ease: "easeOut"
     }
   }
 };
 
-const scaleHoverVariants = {
-  rest: { scale: 1 },
-  hover: { 
-    scale: 1.05,
-    transition: { 
-      duration: 0.3,
-      type: "spring",
-      stiffness: 300
-    }
-  }
-};
+
 const fadeInVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
 };
-// Enhanced Animation Variants
-const pageTransition = {
-  initial: { opacity: 0, y: 20 },
-  animate: { 
-    opacity: 1, 
-    y: 0,
-    transition: { 
-      duration: 0.8, 
-      ease: "easeInOut",
-      staggerChildren: 0.2
-    }
-  },
-  exit: { 
-    opacity: 0, 
-    y: -20,
-    transition: { duration: 0.5 }
-  }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const staggerItem = {
-  hidden: { 
-    opacity: 0, 
-    y: 50,
-    scale: 0.9
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      type: "spring",
-      stiffness: 100
-    }
-  },
-  hover: {
-    scale: 1.05,
-    transition: { 
-      duration: 0.3,
-      type: "spring",
-      stiffness: 300
-    }
-  }
-};
-
-const scrollReveal = {
-  hidden: { 
-    opacity: 0, 
-    y: 50 
-  },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 10,
-      duration: 0.8
-    }
-  }
-};
-
-
 
 const Home = () => {
-  const [textIndex, setTextIndex] = useState(0);
-  const focusText = "Help to improve focus for more productive";
-  const [selected, setSelected] = useState('Sleep');
+  const words = ["Productive", "Creative", "Relax", "Confidence"];
+  const [setCurrentWordIndex] = useState(0);
+  const [setShowCursor] = useState(true);
+  const [selected, setSelected] = useState("Sleep");
 
   // Refs for scroll animations
   const ref1 = useRef(null);
@@ -147,19 +65,10 @@ const Home = () => {
   const inView3 = useInView(ref3, { once: true, amount: 0.2 });
   const inView4 = useInView(ref4, { once: true, amount: 0.2 });
 
-  useEffect(() => {
-    const textInterval = setInterval(() => {
-      setTextIndex((prevIndex) => (prevIndex + 1) % focusText.length);
-    }, 100);
-
-    return () => clearInterval(textInterval);
-  }, [focusText]);
-
   return (
-    
     <div className="overflow-x-hidden bg-white">
       {/* Hero Section with Enhanced Responsiveness */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -175,20 +84,17 @@ const Home = () => {
             quality={90}
           />
         </div>
-        
+
         <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 grid md:grid-cols-2 gap-8 items-center">
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeInVariants}
             className="text-center md:text-left space-y-6"
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 animate-type">
-              {focusText.slice(0, textIndex)}
-              <span className="text-white">
-                {focusText[textIndex]}
-              </span>
-              {focusText.slice(textIndex + 1)}
+            {/* Typing Effect Heading */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
+              <TypingEffect />
             </h1>
             <p className="text-base md:text-lg text-black mb-8">
               Enhance your productivity with our innovative focus app
@@ -198,7 +104,7 @@ const Home = () => {
                 href="#features"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="px-6 py-3 text-white font-bold rounded-full bg-purple-600 hover:bg-purple-700 transition duration-300"
+                className="px-7 py-1 text-white font-bold rounded-full bg-black  transition duration-100 h-8"
               >
                 LEARN MORE
               </motion.a>
@@ -206,7 +112,7 @@ const Home = () => {
                 href="#download"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="px-6 py-3 text-white font-bold rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 transition duration-300"
+                className="px-7 py-1 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 h-8 border	"
               >
                 DOWNLOAD
               </motion.a>
