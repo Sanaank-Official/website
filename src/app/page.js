@@ -6,6 +6,8 @@ import Image from "next/image";
 const Home = () => {
 	const [textIndex, setTextIndex] = useState(0);
 	const focusText = "Help to improve focus for more productive";
+  const [selected, setSelected] = useState('Sleep');
+
 
 	useEffect(() => {
 		const textInterval = setInterval(() => {
@@ -20,21 +22,21 @@ const Home = () => {
 			{/* Home Section */}
 			<div className="relative h-screen z-0">
 				<Image
-					src="/images/background/1.jpg"
+					src="/images/background/3.jpg"
 					alt="Background Image"
 					fill
 					className="absolute inset-0 object-cover"
 				/>
 				<div className="relative z-10 flex items-center justify-center h-full px-8 md:px-16 lg:px-24">
 					<div className="max-w-xl text-left">
-						<h1 className="text-3xl font-bold text-white mb-4 md:text-4xl lg:text-5xl animate-type">
+						<h1 className="text-3xl font-bold text-black mb-4 md:text-4xl lg:text-5xl animate-type">
 							{focusText.slice(0, textIndex)}
-							<span className="text-purple-500">
+							<span className="text-white">
 								{focusText[textIndex]}
 							</span>
 							{focusText.slice(textIndex + 1)}
 						</h1>
-						<p className="text-base text-white-700 mb-8 md:text-lg">
+						<p className="text-base text-black mb-8 md:text-lg">
 							Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit, sed do eiusmod tempor incididunt.
 						</p>
@@ -67,7 +69,7 @@ const Home = () => {
 				<div className="container mx-auto px-8 md:px-16 lg:px-24">
 					{/* Discover Section */}
 					<div className="text-center mb-6">
-						<span className="text-sm font-bold text-purple-500 bg-purple-100 py-1 px-3 rounded-md inline-block">
+						<span className="text-sm font-bold text-yellow-500	 bg-yellow-100 py-1 px-3 rounded-md inline-block">
 							Discover
 						</span>
 					</div>
@@ -76,7 +78,7 @@ const Home = () => {
 						Top Features
 					</h2>
 					{/* Underline */}
-					<div className="w-20 h-1 bg-purple-500 mx-auto mb-12"></div>
+					<div className="w-20 h-1 bg-yellow-500 mx-auto mb-12"></div>
 					{/* Features Grid */}
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 						{" "}
@@ -85,7 +87,7 @@ const Home = () => {
 						<div className="flex items-center gap-6">
 							{" "}
 							{/* Closer spacing */}
-							<div className="bg-purple-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
+							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
 								<i className="fas fa-music"></i> {/* Icon */}
 							</div>
 							<div>
@@ -100,7 +102,7 @@ const Home = () => {
 						</div>
 						{/* Feature 2 */}
 						<div className="flex items-center gap-6">
-							<div className="bg-purple-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
+							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
 								<i className="fas fa-list-alt"></i> {/* Icon */}
 							</div>
 							<div>
@@ -115,7 +117,7 @@ const Home = () => {
 						</div>
 						{/* Feature 3 */}
 						<div className="flex items-center gap-6">
-							<div className="bg-purple-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
+							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
 								<i className="fas fa-star"></i> {/* Icon */}
 							</div>
 							<div>
@@ -130,7 +132,7 @@ const Home = () => {
 						</div>
 						{/* Feature 4 */}
 						<div className="flex items-center gap-6">
-							<div className="bg-purple-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
+							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
 								<i className="fas fa-heartbeat"></i>{" "}
 								{/* Icon */}
 							</div>
@@ -146,7 +148,7 @@ const Home = () => {
 						</div>
 						{/* Feature 5 */}
 						<div className="flex items-center gap-6">
-							<div className="bg-purple-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
+							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
 								<i className="fas fa-random"></i> {/* Icon */}
 							</div>
 							<div>
@@ -161,7 +163,7 @@ const Home = () => {
 						</div>
 						{/* Feature 6 */}
 						<div className="flex items-center gap-6">
-							<div className="bg-purple-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
+							<div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
 								<i className="fas fa-clock"></i> {/* Icon */}
 							</div>
 							<div>
@@ -179,44 +181,66 @@ const Home = () => {
 			</div>
 
 			{/* Features Section */}
-			<div className="bg-gray-100 py-16">
-				<div className="container mx-auto px-8 md:px-16 lg:px-24">
-					<div className="flex items-center">
-						<Image
-							src="/images/misc/5.png"
-							alt="Feature Image"
-							width={400}
-							height={400}
-							className="mr-8 animate-fade-in"
-						/>
-						<div className="max-w-xl">
-							<h2 className="text-3xl font-bold mb-4 text-gray-800">
-								Enhance Your Productivity
-							</h2>
-							<p className="mb-8 text-gray-600">
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.
-							</p>
-							<div className="flex space-x-4">
-								<a
-									href="#"
-									className="btn btn-primary animate-bounce">
-									LEARN MORE
-								</a>
-								<a
-									href="#"
-									className="btn btn-secondary animate-bounce">
-									DOWNLOAD
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+<div className="bg-white py-16 flex justify-center items-center">
+  <div className="container mx-auto px-8 md:px-16 lg:px-24">
+    <div className="flex flex-col items-center md:flex-row md:items-center">
+      <Image
+        src="/images/misc/5.png"
+        alt="Feature Image"
+        width={400}
+        height={400}
+        className="md:mr-8 mb-8 md:mb-0"
+      />
+      <div className="max-w-xl text-left">
+        {/* Discover Section */}
+        <div className="mb-6">
+          <span className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md">
+            Discover
+          </span>
+        </div>
+        <h2 className="text-3xl font-bold mb-4 text-gray-800">
+          Enhance Your Productivity
+        </h2>
+        {/* Buttons and Dynamic Text */}
+        <div>
+        <div className="space-x-4 mb-4">
+    {['Sleep', 'Focus', 'Relax'].map((item) => (
+      <button
+        key={item}
+        className={`px-4 py-2 rounded-md font-semibold ${
+          selected === item
+            ? 'bg-yellow-400 text-white'
+            : 'bg-white text-yellow-300'
+        } border border-yellow-300`}
+        onClick={() => setSelected(item)}
+      >
+        {item}
+      </button>
+    ))}
+  </div>
+          <div className="text-gray-700">
+            {selected === 'Sleep' && (
+              <p>
+                Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa eiusmod id nostrud sit cupidatat in veniam ad.
+              </p>
+            )}
+            {selected === 'Focus' && (
+              <p>
+                Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt.
+              </p>
+            )}
+            {selected === 'Relax' && (
+              <p>
+                Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam.
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 			{/* FAQ Section */}
 			<div className="bg-white py-16">
@@ -244,7 +268,7 @@ const Home = () => {
 				<div className="container mx-auto px-8 md:px-16 lg:px-24">
 					{/* Discover and Latest Buttons */}
 					<div className="text-center mb-4">
-						<span className="text-sm font-bold text-purple-500 bg-purple-100 py-1 px-3 rounded-md inline-block">
+						<span className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md inline-block">
 							Latest
 						</span>
 					</div>
@@ -253,18 +277,18 @@ const Home = () => {
 					<h2 className="text-3xl font-bold text-center mb-4 text-gray-800">
 						Customer Reviews
 					</h2>
-					<div className="w-16 h-1 bg-purple-500 mx-auto mb-12"></div>
+					<div className="w-16 h-1 bg-yellow-500 mx-auto mb-12"></div>
 
 					{/* Customer Reviews Grid */}
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 						{/* Review Box 1 */}
 						<div className="bg-[#f0f4fd] rounded-lg p-6 shadow-md cursor-pointer hover:shadow-lg transform transition-all duration-300">
-							{/* Purple stars */}
+							{/* yellow stars */}
 							<div className="flex mb-2">
 								{[...Array(5)].map((_, index) => (
 									<svg
 										key={index}
-										className="w-5 h-5 text-purple-500"
+										className="w-5 h-5 text-yellow-500"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 20 20"
@@ -290,12 +314,12 @@ const Home = () => {
 
 						{/* Review Box 2 */}
 						<div className="bg-[#f0f4fd] rounded-lg p-6 shadow-md cursor-pointer hover:shadow-lg transform transition-all duration-300">
-							{/* Purple stars */}
+							{/* yellow stars */}
 							<div className="flex mb-2">
 								{[...Array(5)].map((_, index) => (
 									<svg
 										key={index}
-										className="w-5 h-5 text-purple-500"
+										className="w-5 h-5 text-yellow-500"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 20 20"
@@ -321,12 +345,12 @@ const Home = () => {
 
 						{/* Review Box 3 */}
 						<div className="bg-[#f0f4fd] rounded-lg p-6 shadow-md cursor-pointer hover:shadow-lg transform transition-all duration-300">
-							{/* Purple stars */}
+							{/* yellow stars */}
 							<div className="flex mb-2">
 								{[...Array(5)].map((_, index) => (
 									<svg
 										key={index}
-										className="w-5 h-5 text-purple-500"
+										className="w-5 h-5 text-yellow-500"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 20 20"
@@ -353,7 +377,7 @@ const Home = () => {
 
 					{/* Slidable Box Feature */}
 					<div className="mt-12">
-						<button className="bg-purple-500 text-white py-2 px-4 rounded-full">
+						<button className="bg-yellow-500 text-white py-2 px-4 rounded-full">
 							See More Reviews
 						</button>
 					</div>
@@ -361,7 +385,7 @@ const Home = () => {
 			</div>
 
 			{/* Stats Section */}
-			<div className="bg-purple-500 py-16 text-white">
+			<div className="bg-yellow-500 py-16 text-white">
 				<div className="container mx-auto px-8 md:px-16 lg:px-24">
 					<div className="grid grid-cols-1 md:grid-cols-4 gap-8 animate-fade-in">
 						<div>
@@ -394,7 +418,7 @@ const Home = () => {
 					{/* Left side: Text and Buttons */}
 					<div className="flex flex-col items-center lg:items-start text-center lg:text-left">
 						{/* Download Heading */}
-						<span className="text-sm font-bold text-purple-500 bg-purple-100 py-1 px-3 rounded-md mb-2">
+						<span className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md mb-2">
 							Download
 						</span>
 						<h2 className="text-3xl font-bold mb-4 text-gray-800">
