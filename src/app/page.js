@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { motion, useInView, useAnimation , AnimatePresence } from "framer-motion";
 import {
   FaMusic,
   FaListAlt,
@@ -9,210 +10,367 @@ import {
   FaHeartbeat,
   FaRandom,
   FaClock,
+  FaApple,
+  FaGooglePlay,
 } from "react-icons/fa";
+
+// Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
+const scaleHoverVariants = {
+  rest: { scale: 1 },
+  hover: { 
+    scale: 1.05,
+    transition: { 
+      duration: 0.3,
+      type: "spring",
+      stiffness: 300
+    }
+  }
+};
+const fadeInVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+// Enhanced Animation Variants
+const pageTransition = {
+  initial: { opacity: 0, y: 20 },
+  animate: { 
+    opacity: 1, 
+    y: 0,
+    transition: { 
+      duration: 0.8, 
+      ease: "easeInOut",
+      staggerChildren: 0.2
+    }
+  },
+  exit: { 
+    opacity: 0, 
+    y: -20,
+    transition: { duration: 0.5 }
+  }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const staggerItem = {
+  hidden: { 
+    opacity: 0, 
+    y: 50,
+    scale: 0.9
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      type: "spring",
+      stiffness: 100
+    }
+  },
+  hover: {
+    scale: 1.05,
+    transition: { 
+      duration: 0.3,
+      type: "spring",
+      stiffness: 300
+    }
+  }
+};
+
+const scrollReveal = {
+  hidden: { 
+    opacity: 0, 
+    y: 50 
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 10,
+      duration: 0.8
+    }
+  }
+};
+
+
+
 const Home = () => {
-	const [textIndex, setTextIndex] = useState(0);
-	const focusText = "Help to improve focus for more productive";
+  const [textIndex, setTextIndex] = useState(0);
+  const focusText = "Help to improve focus for more productive";
   const [selected, setSelected] = useState('Sleep');
 
+  // Refs for scroll animations
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const ref4 = useRef(null);
 
-	useEffect(() => {
-		const textInterval = setInterval(() => {
-			setTextIndex((prevIndex) => (prevIndex + 1) % focusText.length);
-		}, 100);
+  // Intersection observers for animations
+  const inView1 = useInView(ref1, { once: true, amount: 0.2 });
+  const inView2 = useInView(ref2, { once: true, amount: 0.2 });
+  const inView3 = useInView(ref3, { once: true, amount: 0.2 });
+  const inView4 = useInView(ref4, { once: true, amount: 0.2 });
 
-		return () => clearInterval(textInterval);
-	}, [focusText]);
+  useEffect(() => {
+    const textInterval = setInterval(() => {
+      setTextIndex((prevIndex) => (prevIndex + 1) % focusText.length);
+    }, 100);
 
-	return (
-		<div>
-			{/* Home Section */}
-			<div className="relative h-screen z-0">
-				<Image
-					src="/images/background/3.jpg"
-					alt="Background Image"
-					fill
-					className="absolute inset-0 object-cover"
-				/>
-				<div className="relative z-10 flex items-center justify-center h-full px-8 md:px-16 lg:px-24">
-					<div className="max-w-xl text-left">
-						<h1 className="text-3xl font-bold text-black mb-4 md:text-4xl lg:text-5xl animate-type">
-							{focusText.slice(0, textIndex)}
-							<span className="text-white">
-								{focusText[textIndex]}
-							</span>
-							{focusText.slice(textIndex + 1)}
-						</h1>
-						<p className="text-base text-black mb-8 md:text-lg">
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt.
-						</p>
-						<div className="flex space-x-4 justify-start">
-							<a
-								href="#"
-								className="px-6 py-3 text-white font-bold rounded-full bg-[rgb(129,103,230)] hover:scale-105 transform transition duration-300 ease-in-out">
-								LEARN MORE
-							</a>
-							<a
-								href="#"
-								className="px-6 py-3 text-white font-bold rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:scale-105 transform transition duration-300 ease-in-out">
-								DOWNLOAD
-							</a>
-						</div>
-					</div>
-					<Image
-						src="/images/misc/1.png"
-						alt="Side Image"
-						width={528}
-						height={658}
-						className="hidden md:block animate-fade-in"
-					/>
-				</div>
-			</div>
+    return () => clearInterval(textInterval);
+  }, [focusText]);
 
-			<div className="bg-[rgb(240,244,253)] py-20">
-      <div className="container mx-auto px-8 md:px-16 lg:px-24">
-        {/* Discover Section */}
-        <div className="text-center mb-6">
-          <span className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md inline-block">
-            Discover
-          </span>
+  return (
+    
+    <div className="overflow-x-hidden bg-white">
+      {/* Hero Section with Enhanced Responsiveness */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative min-h-screen flex items-center justify-center"
+      >
+        <div className="absolute inset-0">
+          <Image
+            src="/images/background/3.jpg"
+            alt="Background Image"
+            fill
+            className="object-cover"
+            priority
+            quality={90}
+          />
         </div>
-        {/* Top Features Heading */}
-        <h2 className="text-4xl font-bold text-center mb-6 text-gray-800">
-          Top Features
-        </h2>
-        {/* Underline */}
-        <div className="w-20 h-1 bg-yellow-500 mx-auto mb-12"></div>
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {/* Feature 1 */}
-          <div className="flex items-center gap-6">
-            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
-              <FaMusic />
+        
+        <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 grid md:grid-cols-2 gap-8 items-center">
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={fadeInVariants}
+            className="text-center md:text-left space-y-6"
+          >
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 animate-type">
+              {focusText.slice(0, textIndex)}
+              <span className="text-white">
+                {focusText[textIndex]}
+              </span>
+              {focusText.slice(textIndex + 1)}
+            </h1>
+            <p className="text-base md:text-lg text-black mb-8">
+              Enhance your productivity with our innovative focus app
+            </p>
+            <div className="flex justify-center md:justify-start space-x-4">
+              <motion.a
+                href="#features"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="px-6 py-3 text-white font-bold rounded-full bg-purple-600 hover:bg-purple-700 transition duration-300"
+              >
+                LEARN MORE
+              </motion.a>
+              <motion.a
+                href="#download"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="px-6 py-3 text-white font-bold rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 transition duration-300"
+              >
+                DOWNLOAD
+              </motion.a>
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-800 text-left">
-                HD Sounds
-              </h3>
-              <p className="text-base text-gray-600 text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-          {/* Feature 2 */}
-          <div className="flex items-center gap-6">
-            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
-              <FaListAlt />
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-800 text-left">
-                Playlist
-              </h3>
-              <p className="text-base text-gray-600 text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-          {/* Feature 3 */}
-          <div className="flex items-center gap-6">
-            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
-              <FaStar />
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-800 text-left">
-                Favorites
-              </h3>
-              <p className="text-base text-gray-600 text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-          {/* Feature 4 */}
-          <div className="flex items-center gap-6">
-            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
-              <FaHeartbeat />
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-800 text-left">
-                Mood Detector
-              </h3>
-              <p className="text-base text-gray-600 text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-          {/* Feature 5 */}
-          <div className="flex items-center gap-6">
-            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
-              <FaRandom />
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-800 text-left">
-                Shuffle
-              </h3>
-              <p className="text-base text-gray-600 text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-          {/* Feature 6 */}
-          <div className="flex items-center gap-6">
-            <div className="bg-yellow-500 text-white rounded-full w-24 h-20 flex items-center justify-center text-3xl">
-              <FaClock />
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-800 text-left">
-                Timer
-              </h3>
-              <p className="text-base text-gray-600 text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
+          </motion.div>
+          
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={fadeInVariants}
+            className="hidden md:flex justify-center items-center"
+          >
+            <Image
+              src="/images/misc/1.png"
+              alt="Side Image"
+              width={528}
+              height={658}
+              className="animate-fade-in max-w-full h-auto"
+            />
+          </motion.div>
         </div>
-      </div>
-    </div>
+      </motion.div>
 
-			{/* Features Section */}
+      {/* Features Section with Improved Responsiveness */}
+      <motion.div 
+        id="features"
+        ref={ref1}
+        initial="hidden"
+        animate={inView1 ? "visible" : "hidden"}
+        variants={containerVariants}
+        className="bg-[rgb(240,244,253)] py-16 px-4"
+      >
+        <div className="container mx-auto">
+          <motion.div 
+            variants={itemVariants}
+            className="text-center mb-12"
+          >
+            <motion.span 
+              whileHover={{ scale: 1.1 }}
+              className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md inline-block"
+            >
+              Discover
+            </motion.span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-4">
+              Top Features
+            </h2>
+            <div className="w-20 h-1 bg-yellow-500 mx-auto mt-4"></div>
+          </motion.div>
+
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView1 ? "visible" : "hidden"}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {[
+              { icon: <FaMusic />, title: "HD Sounds", desc: "Immersive high-quality audio experiences" },
+              { icon: <FaListAlt />, title: "Playlist", desc: "Create and manage your custom soundscapes" },
+              { icon: <FaStar />, title: "Favorites", desc: "Save and quickly access your preferred sounds" },
+              { icon: <FaHeartbeat />, title: "Mood Detector", desc: "Intelligent mood-based sound recommendations" },
+              { icon: <FaRandom />, title: "Shuffle", desc: "Randomize your audio experience" },
+              { icon: <FaClock />, title: "Timer", desc: "Integrated productivity timer" }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="bg-white p-6 rounded-lg shadow-md flex items-center space-x-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              >
+                <div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
+                  {feature.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {feature.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </motion.div>
+
+{/* Features Section */}
 <div className="bg-white py-16 flex justify-center items-center">
-  <div className="container mx-auto px-8 md:px-16 lg:px-24">
-    <div className="flex flex-col flex justify-center items-center md:flex-row md:items-center">
-      <Image
-        src="/images/misc/5.png"
-        alt="Feature Image"
-        width={400}
-        height={400}
-        className="md:mr-8 mb-8 md:mb-0"
-      />
-      <div className="max-w-xl text-left">
+  <motion.div
+    className="container mx-auto px-8 md:px-16 lg:px-24"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.5 }} // Animation triggers once when 50% of the section is in view
+    transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+    variants={{
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0 },
+    }}
+  >
+    <div className="flex flex-col justify-center items-center md:flex-row md:items-center">
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
+      >
+        <Image
+          src="/images/misc/5.png"
+          alt="Feature Image"
+          width={400}
+          height={400}
+          className="md:mr-8 mb-8 md:mb-0"
+        />
+      </motion.div>
+      <motion.div
+        className="max-w-xl text-left"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, x: 50 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+      >
         {/* Discover Section */}
         <div className="mb-6">
-          <span className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md">
+          <motion.span
+            whileHover={{
+              scale: 1.2,
+              rotate: [0, 360],
+              transition: { duration: 0.8, type: "spring", stiffness: 150 },
+            }}
+            className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md"
+          >
             Discover
-          </span>
+          </motion.span>
         </div>
         <h2 className="text-3xl font-bold mb-4 text-gray-800">
           Enhance Your Productivity
         </h2>
         {/* Buttons and Dynamic Text */}
         <div>
-        <div className="space-x-4 mb-4">
-    {['Sleep', 'Focus', 'Relax'].map((item) => (
-      <button
-        key={item}
-        className={`px-4 py-2 rounded-md font-semibold ${
-          selected === item
-            ? 'bg-yellow-400 text-white'
-            : 'bg-white text-yellow-300'
-        } border border-yellow-300`}
-        onClick={() => setSelected(item)}
-      >
-        {item}
-      </button>
-    ))}
-  </div>
-          <div className="text-gray-700">
+          <div className="space-x-4 mb-4">
+            {['Sleep', 'Focus', 'Relax'].map((item) => (
+              <motion.button
+                key={item}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={`px-4 py-2 rounded-md font-semibold ${
+                  selected === item
+                    ? 'bg-yellow-400 text-white'
+                    : 'bg-white text-yellow-300'
+                } border border-yellow-300`}
+                onClick={() => setSelected(item)}
+              >
+                {item}
+              </motion.button>
+            ))}
+          </div>
+          <motion.div
+            key={selected}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+            className="text-gray-700"
+          >
             {selected === 'Sleep' && (
               <p>
                 Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa eiusmod id nostrud sit cupidatat in veniam ad.
@@ -228,13 +386,12 @@ const Home = () => {
                 Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam.
               </p>
             )}
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
-  </div>
+  </motion.div>
 </div>
-
 
 			{/* FAQ Section */}
 			<div className="bg-white py-16">
