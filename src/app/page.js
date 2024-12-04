@@ -183,7 +183,7 @@ const Home = () => {
 			{/* Features Section */}
 <div className="bg-white py-16 flex justify-center items-center">
   <div className="container mx-auto px-8 md:px-16 lg:px-24">
-    <div className="flex flex-col items-center md:flex-row md:items-center">
+    <div className="flex flex-col flex justify-center items-center md:flex-row md:items-center">
       <Image
         src="/images/misc/5.png"
         alt="Feature Image"
@@ -412,7 +412,7 @@ const Home = () => {
 			<div className="bg-[#f7f8fc] py-16 flex items-center justify-center">
 				{" "}
 				{/* Center-align the entire section */}
-				<div className="container mx-auto flex flex-col lg:flex-row items-center gap-8">
+				<div className="container mx-auto flex justify-center flex flex-col lg:flex-row items-center gap-8">
 					{" "}
 					{/* Flexbox for alignment */}
 					{/* Left side: Text and Buttons */}
