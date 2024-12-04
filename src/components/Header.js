@@ -23,15 +23,24 @@ export default function Header() {
 	return (
 		<nav
 			className={`fixed top-0 left-0 w-full flex items-center justify-around text-lg p-8 transition-all duration-300 z-50 ${
-				isScrolled ? "bg-customYellow" : "bg-transparent"
+				isScrolled ? "bg-white" : "bg-transparent"
 			}`}>
-			<Image
-				src="/images/logo-light.png"
-				alt="Sanaank Logo"
-				width={70}
-				height={21}
-			/>
-			<ul className="flex space-x-8 text-white">
+			{isScrolled ? (
+				<Image
+					src="/images/logo.png"
+					alt="Sanaank Logo"
+					width={70}
+					height={21}
+				/>
+			) : (
+				<Image
+					src="/images/logo-light.png"
+					alt="Sanaank Logo"
+					width={70}
+					height={21}
+				/>
+			)}
+			<ul className="flex space-x-8 text-black">
 				<li>
 					<Link href="/">Home</Link>
 				</li>
@@ -47,7 +56,9 @@ export default function Header() {
 			</ul>
 			<a
 				href="#"
-				className="px-7 py-1 text-white font-bold rounded-full bg-black  transition duration-100 h-9">
+				className={`px-7 py-1 text-white font-bold rounded-full transition duration-100 h-9 ${
+					isScrolled ? "bg-customYellow" : "bg-black"
+				}`}>
 				DOWNLOAD
 			</a>
 		</nav>
