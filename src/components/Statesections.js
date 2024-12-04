@@ -47,7 +47,7 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <div className="bg-yellow-500 py-16 text-white">
+    <div className="bg-customYellow py-16 text-white">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 animate-fade-in">
           <div>

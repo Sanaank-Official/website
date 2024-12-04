@@ -34,6 +34,7 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        customYellow: '#F9C22A',
       },
     },
   },

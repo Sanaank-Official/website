@@ -23,7 +23,7 @@ export default function Header() {
 	return (
 		<nav
 			className={`fixed top-0 left-0 w-full flex items-center justify-around text-lg p-8 transition-all duration-300 z-50 ${
-				isScrolled ? "bg-yellow-500" : "bg-transparent"
+				isScrolled ? "bg-customYellow" : "bg-transparent"
 			}`}>
 			<Image
 				src="/images/logo-light.png"
@@ -47,7 +47,7 @@ export default function Header() {
 			</ul>
 			<a
 				href="#"
-				className="px-5 py-2 text-white font-light rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:scale-105 transform transition duration-300 ease-in-out">
+				className="px-7 py-1 text-white font-bold rounded-full bg-black  transition duration-100 h-9">
 				DOWNLOAD
 			</a>
 		</nav>

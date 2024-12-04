@@ -152,14 +152,14 @@ const Home = () => {
           >
             <motion.span 
               whileHover={{ scale: 1.1 }}
-              className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md inline-block"
+              className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md inline-block"
             >
               Discover
             </motion.span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-4">
               Top Features
             </h2>
-            <div className="w-20 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            <div className="w-20 h-1 bg-customYellow mx-auto mt-4"></div>
           </motion.div>
 
           <motion.div 
@@ -181,7 +181,7 @@ const Home = () => {
                 variants={itemVariants}
                 className="bg-white p-6 rounded-lg shadow-md flex items-center space-x-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
-                <div className="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
+                <div className="bg-customYellow text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
                   {feature.icon}
                 </div>
                 <div>
@@ -245,7 +245,7 @@ const Home = () => {
               rotate: [0, 360],
               transition: { duration: 0.8, type: "spring", stiffness: 150 },
             }}
-            className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md"
+            className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md"
           >
             Discover
           </motion.span>
@@ -310,7 +310,7 @@ const Home = () => {
 				<div className="container mx-auto px-8 md:px-16 lg:px-24">
 					{/* Discover and Latest Buttons */}
 					<div className="text-center mb-4">
-						<span className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md inline-block">
+						<span className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md inline-block">
 							Latest
 						</span>
 					</div>
@@ -319,7 +319,7 @@ const Home = () => {
 					<h2 className="text-3xl font-bold text-center mb-4 text-gray-800">
 						Customer Reviews
 					</h2>
-					<div className="w-16 h-1 bg-yellow-500 mx-auto mb-12"></div>
+					<div className="w-16 h-1 bg-customYellow mx-auto mb-12"></div>
 
 					{/* Customer Reviews Grid */}
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -330,7 +330,7 @@ const Home = () => {
 								{[...Array(5)].map((_, index) => (
 									<svg
 										key={index}
-										className="w-5 h-5 text-yellow-500"
+										className="w-5 h-5 text-customYellow"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 20 20"
@@ -361,7 +361,7 @@ const Home = () => {
 								{[...Array(5)].map((_, index) => (
 									<svg
 										key={index}
-										className="w-5 h-5 text-yellow-500"
+										className="w-5 h-5 text-customYellow"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 20 20"
@@ -392,7 +392,7 @@ const Home = () => {
 								{[...Array(5)].map((_, index) => (
 									<svg
 										key={index}
-										className="w-5 h-5 text-yellow-500"
+										className="w-5 h-5 text-customYellow"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 20 20"
@@ -419,7 +419,7 @@ const Home = () => {
 
 					{/* Slidable Box Feature */}
 					<div className="mt-12">
-						<button className="bg-yellow-500 text-white py-2 px-4 rounded-full">
+						<button className="bg-customYellow text-white py-2 px-4 rounded-full">
 							See More Reviews
 						</button>
 					</div>
@@ -439,7 +439,7 @@ const Home = () => {
 					{/* Left side: Text and Buttons */}
 					<div className="flex flex-col items-center lg:items-start text-center lg:text-left">
 						{/* Download Heading */}
-						<span className="text-sm font-bold text-yellow-500 bg-yellow-100 py-1 px-3 rounded-md mb-2">
+						<span className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md mb-2">
 							Download
 						</span>
 						<h2 className="text-3xl font-bold mb-4 text-gray-800">
