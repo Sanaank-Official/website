@@ -1,0 +1,13 @@
+.blinking-cursor {
+    font-weight: bold;
+    font-size: inherit;
+    color: black;
+    animation: blink 0.8s step-start infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
