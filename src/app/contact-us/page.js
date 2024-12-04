@@ -20,15 +20,17 @@ export default function ContactUs() {
 				/>
 				<div className="hero-overlay">
 					<h1 className="hero-title">Contact Us</h1>
-					<p className="hero-subtitle">We’d Love to Hear from You!</p>
+					<p className="hero-subtitle">
+						We&apos;d Love to Hear from You!
+					</p>
 				</div>
 			</div>
 
 			<p className="para1">
 				<strong>Have questions, feedback, or need assistance?</strong>
-				<br /> The Sanaank team is here to help. <br /> Whether you're a
-				quiz enthusiast or new to our platform, we’re just a message
-				away.
+				<br /> The Sanaank team is here to help. <br /> Whether
+				you&apos;re a quiz enthusiast or new to our platform, we&apos;re
+				just a message away.
 			</p>
 			<div className="custom-divider"></div>
 
@@ -37,8 +39,8 @@ export default function ContactUs() {
 				{/* Contact Form */}
 				<div className="form-container">
 					<h2 className="form-title">
-						Alternatively, fill out the form below, and we’ll get
-						back to you as soon as possible:
+						Alternatively, fill out the form below, and we&apos;ll
+						get back to you as soon as possible:
 					</h2>
 					<form>
 						<label>Name</label>
@@ -92,7 +94,7 @@ export default function ContactUs() {
 						<h2>Support Hours</h2>
 						<div>
 							<p>Our team is available to assist you:</p>
-							<strong>Monday to Saturday:</strong> 10:00 AM – 6:00
+							<strong>Monday to Saturday:</strong> 10:00 AM - 6:00
 							PM
 							<br />
 							<strong>Sunday:</strong> Closed

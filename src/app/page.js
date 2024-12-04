@@ -21,6 +21,7 @@ import {
 	FaApple,
 	FaGooglePlay,
 } from "react-icons/fa";
+import Link from "next/link";
 
 // Animation Variants
 const containerVariants = {
@@ -397,8 +398,8 @@ const Home = () => {
 							</p>
 							{/* Review text */}
 							<p className="mb-4 text-gray-700">
-								"Elaxo has been a game-changer for my
-								productivity. I highly recommend it!"
+								Elaxo has been a game-changer for my
+								productivity. I highly recommend it!
 							</p>
 						</div>
 
@@ -428,8 +429,8 @@ const Home = () => {
 							</p>
 							{/* Review text */}
 							<p className="mb-4 text-gray-700">
-								"A fantastic tool for streamlining my workflow.
-								Highly recommended!"
+								A fantastic tool for streamlining my workflow.
+								Highly recommended!
 							</p>
 						</div>
 
@@ -459,8 +460,8 @@ const Home = () => {
 							</p>
 							{/* Review text */}
 							<p className="mb-4 text-gray-700">
-								"Using this app has increased my efficiency by
-								50%. It's a must-have!"
+								Using this app has increased my efficiency by
+								50%. It&apos;s a must-have!
 							</p>
 						</div>
 					</div>
@@ -535,14 +536,14 @@ const Home = () => {
 			{/* Footer */}
 			<footer className="bg-yellow-100 text-black py-8">
 				<div className="container mx-auto px-8 md:px-16 lg:px-24 flex items-center justify-between">
-					<a href="/">
+					<Link href="/">
 						<Image
 							src="/images/logo.png"
 							alt="Elaxo Logo"
 							width={70}
 							height={21}
 						/>
-					</a>
+					</Link>
 					<nav>
 						<ul className="flex space-x-6">
 							<li>
