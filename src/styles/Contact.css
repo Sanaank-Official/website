@@ -1,0 +1,164 @@
+.contact-us {
+	width: 100%;
+	background-color: white;
+}
+
+.contact-us .hero-section {
+	position: relative;
+	height: 45vh;
+}
+
+.contact-us .hero-overlay {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2rem;
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+.contact-us .hero-title {
+	font-size: 3rem;
+	font-weight: bold;
+	color: white;
+}
+
+.contact-us .hero-subtitle {
+	font-size: 1.25rem;
+	color: #f7f7f7;
+	margin-top: 0.5rem;
+}
+
+.contact-us .contact-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-top: 5rem;
+	background-color: white;
+}
+
+.para1 {
+	font-size: 1.25rem;
+	color: black;
+	background-color: white;
+	padding-top: 2rem;
+}
+
+.custom-divider {
+	width: 30rem;
+	height: 0.2rem;
+	margin: 1rem auto;
+	background-color: #facc15;
+}
+
+.contact-us .form-container {
+	color: black;
+	text-align: left;
+	width: 40%;
+	padding: 2rem;
+	border-radius: 0.5rem;
+}
+
+.contact-us .form-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 1.5rem;
+}
+
+.contact-us form {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-us label {
+	font-weight: bold;
+	margin-left: 0.5rem;
+	font-size: 0.875rem;
+}
+
+.icon {
+	color: #facc15;
+}
+
+.contact-us input,
+.contact-us textarea {
+	width: 100%;
+	padding: 0.75rem;
+	border: 1px solid #ccc;
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.contact-us button {
+	width: fit-content;
+	padding: 0.35rem 0.8rem;
+	background-color: #facc15;
+	color: white;
+	font-weight: bold;
+	letter-spacing: 0.075rem;
+	border-radius: 50;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.contact-us button:hover {
+	background-color: #fbbf24;
+	color: white;
+}
+
+.contact-us .info-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	max-width: 30rem;
+	/* min-width: fit-content; */
+	padding: 2rem;
+}
+
+.contact-us .card {
+	width: 100%;
+	padding: 1.5rem;
+	text-align: left;
+	border-radius: 0.5rem;
+	/* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.contact-us .card:first-child {
+	background-color: #fffde8;
+	color: grey;
+}
+
+.contact-us .card:first-child h2 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	color: #facc15;
+}
+
+.contact-us .card p {
+	margin-bottom: 0.5rem;
+}
+
+.contact-us .card:last-child {
+	background-color: #facc15;
+	color: white;
+}
+
+.contact-us .card:last-child h2 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.contact-us .icon {
+	margin-right: 0.75rem;
+	font-size: 1.25rem;
+}
+
+.contact-us .strong {
+	font-weight: bold;
+}
