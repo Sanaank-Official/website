@@ -98,7 +98,7 @@
 	color: white;
 	font-weight: bold;
 	letter-spacing: 0.075rem;
-	border-radius: 50;
+	border-radius: 50px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
 }
