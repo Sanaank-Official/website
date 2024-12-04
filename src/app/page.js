@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useInView, useAnimation , AnimatePresence } from "framer-motion";
+import FAQSection from '../components/FAQ';
 import {
   FaMusic,
   FaListAlt,
@@ -393,26 +394,9 @@ const Home = () => {
   </motion.div>
 </div>
 
-			{/* FAQ Section */}
-			<div className="bg-white py-16">
-				<div className="container mx-auto px-8 md:px-16 lg:px-24">
-					<h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-						Frequently Asked Questions
-					</h2>
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-						<div className="bg-gray-100 rounded-lg p-6 animate-fade-in">
-							<h3 className="text-xl font-medium mb-2 text-gray-800">
-								What is Elaxo?
-							</h3>
-							<p className="text-gray-600">
-								Elaxo is a productivity app designed to help you
-								focus and improve your overall productivity.
-							</p>
-						</div>
-						{/* Add more FAQ items here */}
-					</div>
-				</div>
-			</div>
+<div>
+      <FAQSection />
+    </div>
 
 			{/* Customer Reviews Section */}
 			<div className="bg-gray-100 py-16">
