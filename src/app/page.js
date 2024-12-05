@@ -238,7 +238,8 @@ const Home = () => {
 		variants={{
 			hidden: { opacity: 0, y: 50 },
 			visible: { opacity: 1, y: 0 },
-		}}>
+		}}
+	>
 		<div className="flex flex-col justify-center items-center md:flex-row md:items-center">
 			<motion.div
 				initial={{ scale: 0.8, opacity: 0 }}
@@ -248,7 +249,8 @@ const Home = () => {
 					duration: 0.8,
 					type: "spring",
 					stiffness: 120,
-				}}>
+				}}
+			>
 				<Image
 					src="/images/misc/5.png"
 					alt="Feature Image"
@@ -257,6 +259,7 @@ const Home = () => {
 					className="md:mr-12 mb-8 md:mb-0 max-w-full h-auto"
 				/>
 			</motion.div>
+
 			<motion.div
 				className="max-w-xl text-left"
 				initial="hidden"
@@ -270,7 +273,8 @@ const Home = () => {
 					duration: 0.8,
 					type: "spring",
 					stiffness: 100,
-				}}>
+				}}
+			>
 				{/* Discover Section */}
 				<div className="mb-8">
 					<motion.span
@@ -283,72 +287,87 @@ const Home = () => {
 								stiffness: 150,
 							},
 						}}
-						className="text-sm font-bold text-customYellow bg-yellow-100 py-2 px-4 rounded-md tracking-widest">
+						className="text-sm font-bold text-customYellow bg-yellow-100 py-2 px-4 rounded-md tracking-widest"
+					>
 						PROFILE
 					</motion.span>
 				</div>
+
 				<h2 className="text-4xl font-bold mb-6 text-gray-800">
 					Enhance Your Productivity
 				</h2>
+
 				{/* Buttons and Dynamic Text */}
 				<div>
-					<div className="space-x-4 mb-6">
+					{/* Buttons (as list in mobile view) */}
+					<div className="space-y-4 mb-6 md:space-x-4 md:space-y-0 md:flex md:flex-row">
 						{["Download & Register", "Choose Your Quiz", "Win"].map((item) => (
 							<motion.button
 								key={item}
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
-								className={`px-5 py-3 rounded-md font-semibold ${
+								className={`px-5 py-3 rounded-md font-semibold w-full ${
 									selected === item
 										? "bg-yellow-400 text-white"
 										: "bg-white text-yellow-300"
-								} border border-yellow-300 shadow-md`}
-								onClick={() => setSelected(item)}>
+								} border border-yellow-300 shadow-md md:w-auto`}
+								onClick={() => setSelected(item)}
+							>
 								{item}
 							</motion.button>
 						))}
 					</div>
+
+					{/* Paragraph based on selected button */}
 					<motion.div
 						key={selected}
 						initial={{ opacity: 0, x: -20 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.4 }}
-						className="text-gray-700 text-lg">
+						className="text-gray-700 text-lg"
+					>
 						{selected === "Download & Register" && (
 							<p>
-								Consequat occaecat ullamco amet non eiusmod
-								nostrud dolore irure incididunt est duis anim
-								sunt officia. Fugiat velit proident aliquip
-								nisi incididunt nostrud exercitation proident
-								est nisi. Irure magna elit commodo anim ex
-								veniam culpa eiusmod id nostrud sit cupidatat
-								in veniam ad.
+								Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa eiusmod id nostrud sit cupidatat in veniam ad.
 							</p>
 						)}
 						{selected === "Choose Your Quiz" && (
 							<p>
-								Ad pariatur nostrud pariatur exercitation ipsum
-								culpa mollit commodo mollit ex. Aute sunt
-								incididunt amet commodo est sint nisi deserunt
-								pariatur do. Aliquip ex eiusmod voluptate
-								exercitation cillum id incididunt elit sunt.
+								Ad pariatur nostrud pariatur exercitation ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt.
 							</p>
 						)}
 						{selected === "Win" && (
 							<p>
-								Est quis nulla laborum officia ad nisi ex
-								nostrud culpa Lorem excepteur aliquip dolor
-								aliqua irure ex. Nulla ut duis ipsum nisi elit
-								fugiat commodo sunt reprehenderit laborum
-								veniam eu veniam.
+								Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam.
 							</p>
 						)}
 					</motion.div>
+
+					{/* Add "LEARN MORE" and "DOWNLOAD" buttons */}
+					<div className="flex space-x-4 mt-8">
+						<motion.a
+							href="#features"
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.9 }}
+							className="px-7 py-1 text-white font-bold rounded-full bg-black transition duration-100 h-8"
+						>
+							LEARN MORE
+						</motion.a>
+						<motion.a
+							href="#download"
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.9 }}
+							className="px-7 py-1 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 h-8 border"
+						>
+							DOWNLOAD
+						</motion.a>
+					</div>
 				</div>
 			</motion.div>
 		</div>
 	</motion.div>
 </div>
+
 
 			<div>
 				<FAQSection />
