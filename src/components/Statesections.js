@@ -17,7 +17,7 @@ const StatsSection = () => {
 						counter.getAttribute("data-target")
 					);
 					let count = 0;
-					const increment = target / 100;
+					const increment = target / 200;
 					const interval = setInterval(() => {
 						count += increment;
 						if (count >= target) {
@@ -32,7 +32,7 @@ const StatsSection = () => {
 						} else {
 							counter.innerText = Math.ceil(count); // Regular number format
 						}
-					}, 10); // Adjust the speed of the animation by changing interval
+					}, 30); // Adjust the speed of the animation by changing interval
 					observer.unobserve(counter);
 				}
 			});
