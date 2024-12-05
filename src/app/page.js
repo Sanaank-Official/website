@@ -157,7 +157,7 @@ const Home = () => {
 						<h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-4">
 							Top Features
 						</h2>
-						<div className="w-20 h-[0.2rem] bg-customYellow mx-auto mt-4"></div>
+						<div className="w-20 h-[0.1rem] bg-customYellow mx-auto mt-4"></div>
 					</motion.div>
 
 					<motion.div
@@ -368,7 +368,7 @@ const Home = () => {
 					<h2 className="text-3xl font-bold text-center mb-4 text-gray-800">
 						Customer Reviews
 					</h2>
-					<div className="w-20 h-[0.2rem] bg-customYellow mx-auto mb-12"></div>
+					<div className="w-20 h-[0.1rem] bg-customYellow mx-auto mb-12"></div>
 
 					{/* Customer Reviews Grid */}
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">

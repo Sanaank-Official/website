@@ -10,10 +10,10 @@ const FAQSection = () => {
 	return (
 		<div className="bg-[rgb(253,253,240)] py-16">
 			<div className="container mx-auto px-8 md:px-16 lg:px-24">
-				<h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
-					Frequently Asked Questions
+				<h2 className="text-4xl font-bold text-center mb-5 text-gray-800">
+					FAQ
 				</h2>
-				<div className="w-32 mx-auto h-[0.2rem] bg-yellow-400 mb-12"></div>
+				<div className="w-32 mx-auto h-[0.1rem] bg-yellow-400 mb-12"></div>
 
 				<div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
 					{/* Card 1 */}
