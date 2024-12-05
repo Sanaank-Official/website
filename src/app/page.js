@@ -350,125 +350,133 @@ const Home = () => {
 			</div>
 
 			{/* Customer Reviews Section */}
-			<div className="bg-gray-50 py-16">
-				<div className="container mx-auto px-8 md:px-16 lg:px-24">
-					{/* Discover and Latest Buttons */}
-					<div className="text-center mb-4">
-						<span className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md inline-block tracking-widest">
-							LATEST
-						</span>
-					</div>
+<div className="bg-gray-50 py-16">
+    <div className="container mx-auto px-8 md:px-16 lg:px-24">
+        {/* Discover and Latest Buttons */}
+        <div className="text-center mb-4">
+            <span className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md inline-block tracking-widest">
+                LATEST
+            </span>
+        </div>
 
-					{/* Heading with underline */}
-					<h2 className="text-3xl font-bold text-center mb-4 text-gray-800">
-						Customer Reviews
-					</h2>
-					<div className="w-20 h-[0.1rem] bg-customYellow mx-auto mb-12"></div>
+        {/* Heading with underline */}
+        <h2 className="text-3xl font-bold text-center mb-4 text-gray-800">
+            Customer Reviews
+        </h2>
+        <div className="w-20 h-[0.1rem] bg-customYellow mx-auto mb-12"></div>
 
-					{/* Customer Reviews Grid */}
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-						{/* Review Box 1 */}
-						<div className="bg-[#f0f4fd] rounded-lg p-6 shadow-md cursor-pointer hover:shadow-lg transform transition-all duration-300">
-							{/* yellow stars */}
-							<div className="flex mb-2">
-								{[...Array(5)].map((_, index) => (
-									<svg
-										key={index}
-										className="w-5 h-5 text-customYellow"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 20 20"
-										aria-hidden="true">
-										<path
-											fillRule="evenodd"
-											d="M10 15l-5.19 2.73 1.41-5.67-4.61-4.03 5.72-.47L10 0l2.67 7.06 5.72.47-4.61 4.03 1.41 5.67L10 15z"
-											clipRule="evenodd"
-										/>
-									</svg>
-								))}
-							</div>
-							{/* "Excellent" text */}
-							<p className="font-bold text-lg text-gray-800 mb-4">
-								Excellent
-							</p>
-							{/* Review text */}
-							<p className="mb-4 text-gray-700">
-								Elaxo has been a game-changer for my
-								productivity. I highly recommend it!
-							</p>
-						</div>
+        {/* Customer Reviews Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Review Box 1 */}
+            <div className="bg-[#f0f4fd] rounded-lg p-8 shadow-md transform transition-all duration-300" style={{ width: "370px", height: "360px" }}>
+                {/* yellow stars */}
+                <div className="flex mb-6 mt-4">
+                    {[...Array(5)].map((_, index) => (
+                        <svg
+                            key={index}
+                            className="w-5 h-5 text-customYellow"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            aria-hidden="true">
+                            <path
+                                fillRule="evenodd"
+                                d="M10 15l-5.19 2.73 1.41-5.67-4.61-4.03 5.72-.47L10 0l2.67 7.06 5.72.47-4.61 4.03 1.41 5.67L10 15z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
+                    ))}
+                </div>
+                {/* "Excellent" text */}
+                <p className="font-bold text-lg text-gray-800 mb-4 text-left">
+                    Excellent Experience
+                </p>
+                {/* Review text */}
+                <p className="text-gray-700 text-left leading-relaxed">
+                    Elaxo has revolutionized the way I approach my daily tasks. 
+                    It’s intuitive, user-friendly, and packed with powerful features. 
+                    I’ve never been this productive before, and the results speak for themselves.
+                </p>
+                {/* Reviewer Name */}
+                <p className="mt-6 text-customYellow font-bold text-left">
+                    - John Doe
+                </p>
+            </div>
 
-						{/* Review Box 2 */}
-						<div className="bg-[#f0f4fd] rounded-lg p-6 shadow-md cursor-pointer hover:shadow-lg transform transition-all duration-300">
-							{/* yellow stars */}
-							<div className="flex mb-2">
-								{[...Array(5)].map((_, index) => (
-									<svg
-										key={index}
-										className="w-5 h-5 text-customYellow"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 20 20"
-										aria-hidden="true">
-										<path
-											fillRule="evenodd"
-											d="M10 15l-5.19 2.73 1.41-5.67-4.61-4.03 5.72-.47L10 0l2.67 7.06 5.72.47-4.61 4.03 1.41 5.67L10 15z"
-											clipRule="evenodd"
-										/>
-									</svg>
-								))}
-							</div>
-							{/* "Excellent" text */}
-							<p className="font-bold text-lg text-gray-800 mb-4">
-								Excellent
-							</p>
-							{/* Review text */}
-							<p className="mb-4 text-gray-700">
-								A fantastic tool for streamlining my workflow.
-								Highly recommended!
-							</p>
-						</div>
+            {/* Review Box 2 */}
+            <div className="bg-[#f0f4fd] rounded-lg p-8 shadow-md transform transition-all duration-300" style={{ width: "370px", height: "360px" }}>
+                {/* yellow stars */}
+                <div className="flex mb-6 mt-4">
+                    {[...Array(5)].map((_, index) => (
+                        <svg
+                            key={index}
+                            className="w-5 h-5 text-customYellow"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            aria-hidden="true">
+                            <path
+                                fillRule="evenodd"
+                                d="M10 15l-5.19 2.73 1.41-5.67-4.61-4.03 5.72-.47L10 0l2.67 7.06 5.72.47-4.61 4.03 1.41 5.67L10 15z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
+                    ))}
+                </div>
+                {/* "Excellent" text */}
+                <p className="font-bold text-lg text-gray-800 mb-4 text-left">
+                    A Must-Have Tool
+                </p>
+                {/* Review text */}
+                <p className="text-gray-700 text-left leading-relaxed">
+                    This platform has completely streamlined my workflow. 
+                    It’s a breeze to manage tasks and collaborate with my team. 
+                    I’m amazed by how much time it saves me daily.
+                </p>
+                {/* Reviewer Name */}
+                <p className="mt-6 text-customYellow font-bold text-left">
+                    - Jane Smith
+                </p>
+            </div>
 
-						{/* Review Box 3 */}
-						<div className="bg-[#f0f4fd] rounded-lg p-6 shadow-md cursor-pointer hover:shadow-lg transform transition-all duration-300">
-							{/* yellow stars */}
-							<div className="flex mb-2">
-								{[...Array(5)].map((_, index) => (
-									<svg
-										key={index}
-										className="w-5 h-5 text-customYellow"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 20 20"
-										aria-hidden="true">
-										<path
-											fillRule="evenodd"
-											d="M10 15l-5.19 2.73 1.41-5.67-4.61-4.03 5.72-.47L10 0l2.67 7.06 5.72.47-4.61 4.03 1.41 5.67L10 15z"
-											clipRule="evenodd"
-										/>
-									</svg>
-								))}
-							</div>
-							{/* "Excellent" text */}
-							<p className="font-bold text-lg text-gray-800 mb-4">
-								Excellent
-							</p>
-							{/* Review text */}
-							<p className="mb-4 text-gray-700">
-								Using this app has increased my efficiency by
-								50%. It&apos;s a must-have!
-							</p>
-						</div>
-					</div>
+            {/* Review Box 3 */}
+            <div className="bg-[#f0f4fd] rounded-lg p-8 shadow-md transform transition-all duration-300" style={{ width: "370px", height: "360px" }}>
+                {/* yellow stars */}
+                <div className="flex mb-6 mt-4">
+                    {[...Array(5)].map((_, index) => (
+                        <svg
+                            key={index}
+                            className="w-5 h-5 text-customYellow"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            aria-hidden="true">
+                            <path
+                                fillRule="evenodd"
+                                d="M10 15l-5.19 2.73 1.41-5.67-4.61-4.03 5.72-.47L10 0l2.67 7.06 5.72.47-4.61 4.03 1.41 5.67L10 15z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
+                    ))}
+                </div>
+                {/* "Excellent" text */}
+                <p className="font-bold text-lg text-gray-800 mb-4 text-left">
+                    Unmatched Efficiency
+                </p>
+                {/* Review text */}
+                <p className="text-gray-700 text-left leading-relaxed">
+                    Ever since I started using this app, my efficiency has skyrocketed. 
+                    I recommend it to everyone looking to improve their productivity and simplify their workflows.
+                </p>
+                {/* Reviewer Name */}
+                <p className="mt-6 text-customYellow font-bold text-left">
+                    - Alex Johnson
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
-					{/* Slidable Box Feature */}
-					<div className="mt-12">
-						<button className="bg-customYellow text-white py-2 px-4 rounded-full">
-							See More Reviews
-						</button>
-					</div>
-				</div>
-			</div>
 			<div>
 				<StateSection />
 			</div>
