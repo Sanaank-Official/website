@@ -30,8 +30,8 @@ const containerVariants = {
 	visible: {
 		opacity: 1,
 		transition: {
-			delayChildren: 0.3,
-			staggerChildren: 0.2,
+			delayChildren: 0.2,
+			staggerChildren: 0.6,
 		},
 	},
 };
@@ -196,21 +196,6 @@ const Home = () => {
 								icon: <FaStar />,
 								title: "Favorites",
 								desc: "Save and quickly access your preferred sounds",
-							},
-							{
-								icon: <FaHeartbeat />,
-								title: "Mood Detector",
-								desc: "Intelligent mood-based sound recommendations",
-							},
-							{
-								icon: <FaRandom />,
-								title: "Shuffle",
-								desc: "Randomize your audio experience",
-							},
-							{
-								icon: <FaClock />,
-								title: "Timer",
-								desc: "Integrated productivity timer",
 							},
 						].map((feature, index) => (
 							<motion.div
