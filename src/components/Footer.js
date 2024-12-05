@@ -42,30 +42,30 @@ export default function Footer() {
 								</h3>
 								<ul className="space-y-2">
 									<li>
-										<a
+										<Link
 											href="/"
 											className="text-sm hover:text-gray-600 relative group">
 											Home
 											<span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
-										</a>
+										</Link>
 									</li>
 
 									<li>
-										<a
+										<Link
 											href="/about-us"
 											className="text-sm hover:text-gray-600 relative group">
 											About Us
 											<span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
-										</a>
+										</Link>
 									</li>
 
 									<li>
-										<a
+										<Link
 											href="/contact-us"
 											className="text-sm hover:text-gray-600 relative group">
 											Contact Us
 											<span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
-										</a>
+										</Link>
 									</li>
 								</ul>
 							</div>
@@ -75,29 +75,29 @@ export default function Footer() {
 								</h3>
 								<ul className="space-y-2">
 									<li>
-										<a
+										<Link
 											href="/"
 											className="text-sm hover:text-gray-600 relative group">
 											Features
 											<span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
-										</a>
+										</Link>
 									</li>
 
 									<li>
-										<a
+										<Link
 											href="/"
 											className="text-sm hover:text-gray-600 relative group">
 											Reviews
 											<span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
-										</a>
+										</Link>
 									</li>
 									<li>
-										<a
+										<Link
 											href="/"
 											className="text-sm hover:text-gray-600 relative group">
 											Download
 											<span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
-										</a>
+										</Link>
 									</li>
 								</ul>
 							</div>
