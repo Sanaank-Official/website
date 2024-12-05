@@ -56,7 +56,7 @@ const Home = () => {
 	const words = ["Productive", "Creative", "Relax", "Confidence"];
 	const [setCurrentWordIndex] = useState(0);
 	const [setShowCursor] = useState(true);
-	const [selected, setSelected] = useState("Sleep");
+	const [selected, setSelected] = useState("Download & Register");
 
 	// Refs for scroll animations
 	const ref1 = useRef(null);
@@ -151,8 +151,8 @@ const Home = () => {
 						className="text-center mb-12">
 						<motion.span
 							whileHover={{ scale: 1.1 }}
-							className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md inline-block">
-							Discover
+							className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md inline-block tracking-widest">
+							DISCOVER
 						</motion.span>
 						<h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-4">
 							Top Features
@@ -164,7 +164,7 @@ const Home = () => {
 						variants={containerVariants}
 						initial="hidden"
 						animate={inView1 ? "visible" : "hidden"}
-						className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+						className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
 						{[
 							{
 								icon: <FaMusic />,
@@ -219,136 +219,131 @@ const Home = () => {
 			</motion.div>
 
 			{/* Features Section */}
-			<div className="bg-white py-16 flex justify-center items-center">
-				<motion.div
-					className="container mx-auto px-8 md:px-16 lg:px-24"
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.5 }} // Animation triggers once when 50% of the section is in view
-					transition={{
-						duration: 0.8,
-						type: "spring",
-						stiffness: 100,
-					}}
-					variants={{
-						hidden: { opacity: 0, y: 50 },
-						visible: { opacity: 1, y: 0 },
-					}}>
-					<div className="flex flex-col justify-center items-center md:flex-row md:items-center">
-						<motion.div
-							initial={{ scale: 0.8, opacity: 0 }}
-							whileInView={{ scale: 1, opacity: 1 }}
-							viewport={{ once: true }}
-							transition={{
+<div className="bg-white py-12 flex justify-center items-center min-h-full">
+	<motion.div
+		className="container mx-auto px-8 md:px-16 lg:px-24"
+		initial="hidden"
+		whileInView="visible"
+		viewport={{ once: true, amount: 0.5 }} // Animation triggers once when 50% of the section is in view
+		transition={{
+			duration: 0.8,
+			type: "spring",
+			stiffness: 100,
+		}}
+		variants={{
+			hidden: { opacity: 0, y: 50 },
+			visible: { opacity: 1, y: 0 },
+		}}>
+		<div className="flex flex-col justify-center items-center md:flex-row md:items-center">
+			<motion.div
+				initial={{ scale: 0.8, opacity: 0 }}
+				whileInView={{ scale: 1, opacity: 1 }}
+				viewport={{ once: true }}
+				transition={{
+					duration: 0.8,
+					type: "spring",
+					stiffness: 120,
+				}}>
+				<Image
+					src="/images/misc/5.png"
+					alt="Feature Image"
+					width={540}
+					height={591}
+					className="md:mr-12 mb-8 md:mb-0 max-w-full h-auto"
+				/>
+			</motion.div>
+			<motion.div
+				className="max-w-xl text-left"
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.5 }}
+				variants={{
+					hidden: { opacity: 0, x: 50 },
+					visible: { opacity: 1, x: 0 },
+				}}
+				transition={{
+					duration: 0.8,
+					type: "spring",
+					stiffness: 100,
+				}}>
+				{/* Discover Section */}
+				<div className="mb-8">
+					<motion.span
+						whileHover={{
+							scale: 1.2,
+							rotate: [0, 360],
+							transition: {
 								duration: 0.8,
 								type: "spring",
-								stiffness: 120,
-							}}>
-							<Image
-								src="/images/misc/5.png"
-								alt="Feature Image"
-								width={400}
-								height={400}
-								className="md:mr-8 mb-8 md:mb-0"
-							/>
-						</motion.div>
-						<motion.div
-							className="max-w-xl text-left"
-							initial="hidden"
-							whileInView="visible"
-							viewport={{ once: true, amount: 0.5 }}
-							variants={{
-								hidden: { opacity: 0, x: 50 },
-								visible: { opacity: 1, x: 0 },
-							}}
-							transition={{
-								duration: 0.8,
-								type: "spring",
-								stiffness: 100,
-							}}>
-							{/* Discover Section */}
-							<div className="mb-6">
-								<motion.span
-									whileHover={{
-										scale: 1.2,
-										rotate: [0, 360],
-										transition: {
-											duration: 0.8,
-											type: "spring",
-											stiffness: 150,
-										},
-									}}
-									className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md">
-									Discover
-								</motion.span>
-							</div>
-							<h2 className="text-3xl font-bold mb-4 text-gray-800">
-								Enhance Your Productivity
-							</h2>
-							{/* Buttons and Dynamic Text */}
-							<div>
-								<div className="space-x-4 mb-4">
-									{["Sleep", "Focus", "Relax"].map((item) => (
-										<motion.button
-											key={item}
-											whileHover={{ scale: 1.1 }}
-											whileTap={{ scale: 0.9 }}
-											className={`px-4 py-2 rounded-md font-semibold ${
-												selected === item
-													? "bg-yellow-400 text-white"
-													: "bg-white text-yellow-300"
-											} border border-yellow-300`}
-											onClick={() => setSelected(item)}>
-											{item}
-										</motion.button>
-									))}
-								</div>
-								<motion.div
-									key={selected}
-									initial={{ opacity: 0, x: -20 }}
-									animate={{ opacity: 1, x: 0 }}
-									transition={{ duration: 0.4 }}
-									className="text-gray-700">
-									{selected === "Sleep" && (
-										<p>
-											Consequat occaecat ullamco amet non
-											eiusmod nostrud dolore irure
-											incididunt est duis anim sunt
-											officia. Fugiat velit proident
-											aliquip nisi incididunt nostrud
-											exercitation proident est nisi.
-											Irure magna elit commodo anim ex
-											veniam culpa eiusmod id nostrud sit
-											cupidatat in veniam ad.
-										</p>
-									)}
-									{selected === "Focus" && (
-										<p>
-											Ad pariatur nostrud pariatur
-											exercitation ipsum ipsum culpa
-											mollit commodo mollit ex. Aute sunt
-											incididunt amet commodo est sint
-											nisi deserunt pariatur do. Aliquip
-											ex eiusmod voluptate exercitation
-											cillum id incididunt elit sunt.
-										</p>
-									)}
-									{selected === "Relax" && (
-										<p>
-											Est quis nulla laborum officia ad
-											nisi ex nostrud culpa Lorem
-											excepteur aliquip dolor aliqua irure
-											ex. Nulla ut duis ipsum nisi elit
-											fugiat commodo sunt reprehenderit
-											laborum veniam eu veniam.
-										</p>
-									)}
-								</motion.div>
-							</div>
-						</motion.div>
+								stiffness: 150,
+							},
+						}}
+						className="text-sm font-bold text-customYellow bg-yellow-100 py-2 px-4 rounded-md tracking-widest">
+						PROFILE
+					</motion.span>
+				</div>
+				<h2 className="text-4xl font-bold mb-6 text-gray-800">
+					Enhance Your Productivity
+				</h2>
+				{/* Buttons and Dynamic Text */}
+				<div>
+					<div className="space-x-4 mb-6">
+						{["Download & Register", "Choose Your Quiz", "Win"].map((item) => (
+							<motion.button
+								key={item}
+								whileHover={{ scale: 1.1 }}
+								whileTap={{ scale: 0.9 }}
+								className={`px-5 py-3 rounded-md font-semibold ${
+									selected === item
+										? "bg-yellow-400 text-white"
+										: "bg-white text-yellow-300"
+								} border border-yellow-300 shadow-md`}
+								onClick={() => setSelected(item)}>
+								{item}
+							</motion.button>
+						))}
 					</div>
-				</motion.div>
-			</div>
+					<motion.div
+						key={selected}
+						initial={{ opacity: 0, x: -20 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.4 }}
+						className="text-gray-700 text-lg">
+						{selected === "Download & Register" && (
+							<p>
+								Consequat occaecat ullamco amet non eiusmod
+								nostrud dolore irure incididunt est duis anim
+								sunt officia. Fugiat velit proident aliquip
+								nisi incididunt nostrud exercitation proident
+								est nisi. Irure magna elit commodo anim ex
+								veniam culpa eiusmod id nostrud sit cupidatat
+								in veniam ad.
+							</p>
+						)}
+						{selected === "Choose Your Quiz" && (
+							<p>
+								Ad pariatur nostrud pariatur exercitation ipsum
+								culpa mollit commodo mollit ex. Aute sunt
+								incididunt amet commodo est sint nisi deserunt
+								pariatur do. Aliquip ex eiusmod voluptate
+								exercitation cillum id incididunt elit sunt.
+							</p>
+						)}
+						{selected === "Win" && (
+							<p>
+								Est quis nulla laborum officia ad nisi ex
+								nostrud culpa Lorem excepteur aliquip dolor
+								aliqua irure ex. Nulla ut duis ipsum nisi elit
+								fugiat commodo sunt reprehenderit laborum
+								veniam eu veniam.
+							</p>
+						)}
+					</motion.div>
+				</div>
+			</motion.div>
+		</div>
+	</motion.div>
+</div>
 
 			<div>
 				<FAQSection />
@@ -359,8 +354,8 @@ const Home = () => {
 				<div className="container mx-auto px-8 md:px-16 lg:px-24">
 					{/* Discover and Latest Buttons */}
 					<div className="text-center mb-4">
-						<span className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md inline-block">
-							Latest
+						<span className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md inline-block tracking-widest">
+							LATEST
 						</span>
 					</div>
 
@@ -485,8 +480,8 @@ const Home = () => {
 				<div className="container mx-auto flex flex-col lg:flex-row justify-around items-center gap-8">
 					<div className="flex flex-col items-center lg:items-start text-center lg:text-left">
 						{/* Download Heading */}
-						<span className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md mb-4">
-							Download
+						<span className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md mb-4 tracking-widest">
+							DOWNLOAD
 						</span>
 						<h2 className="text-3xl font-bold mb-5 text-gray-800">
 							Available on iOS and Android
