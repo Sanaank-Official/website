@@ -91,7 +91,7 @@ const FAQSection = () => {
                                                 : "max-h-0"
                                         }`}
                                     >
-                                        <p className="text-sm text-gray-600 text-left">
+                                        <p className="text-base text-gray-600 text-left">
                                             {faq.answer}
                                         </p>
                                     </div>
@@ -143,7 +143,7 @@ const FAQSection = () => {
                                                 : "max-h-0"
                                         }`}
                                     >
-                                        <p className="text-sm text-gray-600 text-left">
+                                        <p className="text-base text-gray-600 text-left">
                                             {faq.answer}
                                         </p>
                                     </div>
