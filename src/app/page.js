@@ -395,7 +395,6 @@ const Home = () => {
                 <p className="text-gray-700 text-left leading-relaxed">
                     Elaxo has revolutionized the way I approach my daily tasks. 
                     It’s intuitive, user-friendly, and packed with powerful features. 
-                    I’ve never been this productive before, and the results speak for themselves.
                 </p>
                 {/* Reviewer Name */}
                 <p className="mt-6 text-customYellow font-bold text-left">
