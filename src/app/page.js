@@ -11,6 +11,7 @@ import {
 import FAQSection from "../components/FAQ";
 import TypingEffect from "../components/TypingEffect";
 import StateSection from "../components/Statesections";
+import Footer from "../components/Footer";
 import {
 	FaMusic,
 	FaListAlt,
@@ -550,38 +551,9 @@ const Home = () => {
 				</div>
 			</div>
 
-			{/* Footer */}
-			<footer className="bg-yellow-100 text-black py-8">
-				<div className="container mx-auto px-8 md:px-16 lg:px-24 flex items-center justify-between">
-					<Link href="/">
-						<Image
-							src="/images/logo.png"
-							alt="Elaxo Logo"
-							width={70}
-							height={21}
-						/>
-					</Link>
-					<nav>
-						<ul className="flex space-x-6">
-							<li>
-								<a href="#">Home</a>
-							</li>
-							<li>
-								<a href="#">Company</a>
-							</li>
-							<li>
-								<a href="#">Products</a>
-							</li>
-							<li>
-								<a href="#">Pages</a>
-							</li>
-							<li>
-								<a href="#">Elements</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</footer>
+			<div>
+				<Footer />
+			</div>
 		</div>
 	);
 };
