@@ -14,51 +14,123 @@ export default function Footer() {
   return (
     <div>
       {/* Footer */}
-      <footer className="bg-yellow-100 text-black py-8">
-        <div className="container mx-auto px-6 md:px-16 lg:px-24 flex flex-col items-center md:items-start md:flex-row justify-between">
-          {/* Logo and Nav */}
-          <div className="mb-6 md:mb-0">
-            <Link href="/">
-              <Image
-                src="/images/logo.png"
-                alt="Sanaank Logo"
-                width={70}
-                height={21}
-              />
-            </Link>
+      <footer className="bg-white text-black py-12 border-t border-gray-300">
+        <div className="container mx-auto px-6 md:px-16 lg:px-24">
+          <div className="flex flex-col items-left">
+            {/* Logo */}
+            <div className="mb-10">
+              <Link href="/">
+                <Image
+                  src="/images/logo.png"
+                  alt="Sanaank Logo"
+                  width={100}
+                  height={30}
+                />
+              </Link>
+            </div>
+            {/* Navigation */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+              <div>
+                <h3 className="font-bold text-lg mb-4">Company</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <a
+                      href="#"
+                      className="text-sm hover:text-gray-600 relative group"
+                    >
+                      About Us
+                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-sm hover:text-gray-600 relative group"
+                    >
+                      Jobs
+                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-sm hover:text-gray-600 relative group"
+                    >
+                      Contact
+                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg mb-4">Product</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <a
+                      href="#"
+                      className="text-sm hover:text-gray-600 relative group"
+                    >
+                      Features
+                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-sm hover:text-gray-600 relative group"
+                    >
+                      Pricing
+                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-sm hover:text-gray-600 relative group"
+                    >
+                      Reviews
+                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-sm hover:text-gray-600 relative group"
+                    >
+                      Download
+                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg mb-4">Resources</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <a
+                      href="#"
+                      className="text-sm hover:text-gray-600 relative group"
+                    >
+                      Blog
+                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-sm hover:text-gray-600 relative group"
+                    >
+                      Video Tutorial
+                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <nav>
-            <ul className="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8">
-              <li>
-                <a href="#" className="text-sm hover:text-gray-600">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm hover:text-gray-600">
-                  Company
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm hover:text-gray-600">
-                  Products
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm hover:text-gray-600">
-                  Pages
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm hover:text-gray-600">
-                  Elements
-                </a>
-              </li>
-            </ul>
-          </nav>
         </div>
       </footer>
-
+      <footer className="bg-white text-black py-0 border-t border-gray-300">
       {/* Footer Bottom */}
       <div className="bg-white py-4 px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
         {/* Copyright */}
@@ -90,6 +162,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
+      </footer>
     </div>
   );
 }
