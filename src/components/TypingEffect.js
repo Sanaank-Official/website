@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/TypingEffect.css"; // Import the CSS for blinking cursor
 
 const TypingEffect = () => {
-	const words = ["Productive", "Creative", "Relax", "Confidence"];
+	const words = ["Knowledge", "Expertise", "Education", "Entertainment"];
 	const [currentWordIndex, setCurrentWordIndex] = useState(0);
 	const [displayedText, setDisplayedText] = useState("");
 	const [isDeleting, setIsDeleting] = useState(false);
@@ -39,10 +39,10 @@ const TypingEffect = () => {
 
 	return (
 		<div className="text-center mt-16">
-			<h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black  mb-4 text-left">
-				Help to improve focus for more{" "}
-				<span className="text-black">{displayedText}</span>
-				<span className="blinking-cursor">|</span>
+			<h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black  mb-4 text-left ">
+			Help to improve your earnings<br /> from more{" "}
+				<span className="text-black inline">{displayedText}</span>
+				<span className="blinking-cursor inline">|</span>
 			</h1>
 		</div>
 	);
