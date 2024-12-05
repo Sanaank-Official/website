@@ -13,15 +13,8 @@ import TypingEffect from "../components/TypingEffect";
 import StateSection from "../components/Statesections";
 import Footer from "../components/Footer";
 import {
-	FaMusic,
-	FaListAlt,
-	FaStar,
-	FaHeartbeat,
-	FaRandom,
-	FaClock,
-	FaApple,
-	FaGooglePlay,
-} from "react-icons/fa";
+	MdAccessAlarm, MdCategory, MdMonetizationOn
+} from "react-icons/md";
 import Link from "next/link";
 
 // Animation Variants
@@ -154,71 +147,81 @@ const Home = () => {
 
 </motion.div>
 
-			{/* Features Section with Improved Responsiveness */}
-			<motion.div
-				id="features"
-				ref={ref1}
-				initial="hidden"
-				animate={inView1 ? "visible" : "hidden"}
-				variants={containerVariants}
-				className="bg-[rgb(253,253,240)] py-16 px-4">
-				<div className="container mx-auto">
-					<motion.div
-						variants={itemVariants}
-						className="text-center mb-12">
-						<motion.span
-							whileHover={{ scale: 1.1 }}
-							className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md inline-block tracking-widest">
-							DISCOVER
-						</motion.span>
-						<h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-4">
-							Top Features
-						</h2>
-						<div className="w-20 h-[0.1rem] bg-customYellow mx-auto mt-4"></div>
-					</motion.div>
+{/* Features Section with Improved Responsiveness */}
+<motion.div
+  id="features"
+  ref={ref1}
+  initial="hidden"
+  animate={inView1 ? "visible" : "hidden"}
+  variants={containerVariants}
+  className="bg-[rgb(253,253,240)] py-16 px-4"
+>
+  <div className="container mx-auto">
+    <motion.div
+      variants={itemVariants}
+      className="text-center mb-12"
+    >
+      <motion.span
+        whileHover={{ scale: 1.1 }}
+        className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md inline-block tracking-widest"
+      >
+        DISCOVER
+      </motion.span>
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-4">
+        Top Features
+      </h2>
+      <div className="w-20 h-[0.1rem] bg-customYellow mx-auto mt-4"></div>
+    </motion.div>
 
-					<motion.div
-						variants={containerVariants}
-						initial="hidden"
-						animate={inView1 ? "visible" : "hidden"}
-						className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-						{[
-							{
-								icon: <FaMusic />,
-								title: "HD Sounds",
-								desc: "Immersive high-quality audio experiences",
-							},
-							{
-								icon: <FaListAlt />,
-								title: "Playlist",
-								desc: "Create and manage your custom soundscapes",
-							},
-							{
-								icon: <FaStar />,
-								title: "Favorites",
-								desc: "Save and quickly access your preferred sounds",
-							},
-						].map((feature, index) => (
-							<motion.div
-								key={index}
-								variants={itemVariants}
-								className="bg-white p-6 rounded-lg shadow-md flex items-center space-x-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-								<div className="bg-customYellow text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
-									{feature.icon}
-								</div>
-								<div>
-									<h3 className="text-xl font-bold text-gray-800 mb-2">
-										{feature.title}
-									</h3>
-									<p className="text-gray-600">
-										{feature.desc}
-									</p>
-								</div>
-							</motion.div>
-						))}
-					</motion.div>
-				</div>
-			</motion.div>
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate={inView1 ? "visible" : "hidden"}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-left"
+    >
+      {[
+        {
+          icon: <MdAccessAlarm />,
+          title: "Participate Anytime",
+          desc: "Anywhere: Download our mobile app and dive into an extensive range of quizzes right from your smartphone.",
+        },
+        {
+          icon: <MdCategory />,
+          title: "Diverse Quiz Categories",
+          desc: "From general knowledge to niche fields, we offer quizzes across a variety of topics tailored to your interests and expertise.",
+        },
+        {
+          icon: <MdMonetizationOn />,
+          title: "Exciting Cash Prizes",
+          desc: "Enroll in quizzes for as low as ₹50 and stand a chance to win cash prizes up to ₹10,00,000!",
+        },
+      ].map((feature, index) => (
+        <motion.div
+          key={index}
+          variants={itemVariants}
+          className="bg-white p-10 rounded-lg shadow-md relative flex flex-col justify-between transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+        >
+          {/* Icon */}
+          <div className="bg-customYellow text-white rounded-full w-24 h-24 absolute left-4 top-1/2 transform -translate-y-1/2 flex items-center justify-center text-3xl">
+            {feature.icon}
+          </div>
+
+          {/* Content Section */}
+          <div className="pl-32">
+            <h3 className="text-xl font-bold text-gray-800 mb-2">
+              {feature.title}
+            </h3>
+            <p className="text-gray-600">
+              {feature.desc}
+            </p>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</motion.div>
+
+				
 
 			{/* Features Section */}
 <div className="bg-white py-12 flex justify-center items-center min-h-full">
