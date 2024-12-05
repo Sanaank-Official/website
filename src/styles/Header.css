@@ -1,0 +1,40 @@
+/* Keyframes for sliding the menu down and up */
+@keyframes slideDown {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-100%);
+	}
+}
+
+/* Visible Menu: Slides Down */
+.menu {
+	animation: slideDown 0.7s ease-in-out forwards;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	background-color: white;
+}
+
+/* Hidden Menu: Slides Up */
+.hiddenMenu {
+	animation: slideUp 0.7s ease-in-out forwards;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	background-color: white;
+}
