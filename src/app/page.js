@@ -17,29 +17,16 @@ import {
 } from "react-icons/md";
 import Link from "next/link";
 
-// Animation Variants
-const containerVariants = {
-	hidden: { opacity: 0 },
+
+const itemVariants = {
+	hidden: { opacity: 0, y: 20 }, // Start with opacity 0 and below
 	visible: {
 		opacity: 1,
-		transition: {
-			delayChildren: 0.2,
-			staggerChildren: 0.6,
-		},
+		y: -10, // Moves upwards slightly
+		transition: { duration: 0.8 }, // Smooth fade-up effect
 	},
 };
 
-const itemVariants = {
-	hidden: { y: 50, opacity: 0 },
-	visible: {
-		y: 0,
-		opacity: 1,
-		transition: {
-			duration: 0.9,
-			ease: "easeOut",
-		},
-	},
-};
 
 const fadeInVariants = {
 	hidden: { opacity: 0 },
@@ -153,7 +140,7 @@ const Home = () => {
   ref={ref1}
   initial="hidden"
   animate={inView1 ? "visible" : "hidden"}
-  variants={containerVariants}
+  variants={itemVariants}
   className="bg-[rgb(253,253,240)] py-16 px-4"
 >
   <div className="container mx-auto">
@@ -174,7 +161,7 @@ const Home = () => {
     </motion.div>
 
     <motion.div
-      variants={containerVariants}
+      variants={itemVariants}
       initial="hidden"
       animate={inView1 ? "visible" : "hidden"}
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-left"
