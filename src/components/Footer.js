@@ -23,8 +23,8 @@ export default function Footer() {
                 <Image
                   src="/images/logo.png"
                   alt="Sanaank Logo"
-                  width={100}
-                  height={30}
+                  width={140}
+                  height={38}
                 />
               </Link>
             </div>

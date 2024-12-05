@@ -50,15 +50,15 @@ export default function Header() {
                     <Image
                         src="/images/logo.png"
                         alt="Sanaank Logo"
-                        width={70}
-                        height={21}
+                        width={120}
+                        height={33}
                     />
                 ) : (
                     <Image
                         src="/images/logo-light.png"
                         alt="Sanaank Logo"
-                        width={70}
-                        height={21}
+                        width={120}
+                        height={33}
                     />
                 )}
                 <ul className="flex space-x-8 text-black">
