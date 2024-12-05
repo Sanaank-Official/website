@@ -98,59 +98,60 @@ const Home = () => {
       quality={90}
     />
   </div>
+  <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+  <motion.div
+    initial="hidden"
+    animate="visible"
+    variants={fadeOutVariants}
+    transition={{ duration: 1 }}
+    className="text-center md:text-left space-y-6 mt-36 md:mt-0" // Added margin-top for mobile view
+  >
+    {/* Typing Effect Heading */}
+    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
+      <TypingEffect />
+    </h1>
+    <p className="text-base md:text-lg text-black mb-8">
+      Enhance your productivity with our innovative focus app
+    </p>
+    <div className="flex justify-center md:justify-start space-x-4">
+      <motion.a
+        href="#features"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="px-7 py-1 text-white font-bold rounded-full bg-black transition duration-100 h-8"
+      >
+        LEARN MORE
+      </motion.a>
+      <motion.a
+        href="#download"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="px-7 py-1 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 h-8 border"
+      >
+        DOWNLOAD
+      </motion.a>
+    </div>
+  </motion.div>
 
-  <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 grid md:grid-cols-2 gap-8 items-center">
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={fadeOutVariants}
-      transition={{ duration: 1 }}
-      className="text-center md:text-left space-y-6"
-    >
-      {/* Typing Effect Heading */}
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
-        <TypingEffect />
-      </h1>
-      <p className="text-base md:text-lg text-black mb-8">
-        Enhance your productivity with our innovative focus
-        app
-      </p>
-      <div className="flex justify-center md:justify-start space-x-4">
-        <motion.a
-          href="#features"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="px-7 py-1 text-white font-bold rounded-full bg-black  transition duration-100 h-8"
-        >
-          LEARN MORE
-        </motion.a>
-        <motion.a
-          href="#download"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="px-7 py-1 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 h-8 border"
-        >
-          DOWNLOAD
-        </motion.a>
-      </div>
-    </motion.div>
+  {/* Image section */}
+  <motion.div
+    initial="hidden"
+    animate="visible"
+    variants={fadeOutImageVariants}
+    transition={{ duration: 1 }}
+    className="flex justify-center items-center mt-8 md:mt-0"
+  >
+    <Image
+      src="/images/misc/1.png"
+      alt="Side Image"
+      width={528}
+      height={658}
+      className="animate-fade-in max-w-full h-auto"
+    />
+  </motion.div>
+</div>
 
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={fadeOutImageVariants}
-      transition={{ duration: 1 }}
-      className="hidden md:flex justify-center items-center"
-    >
-      <Image
-        src="/images/misc/1.png"
-        alt="Side Image"
-        width={528}
-        height={658}
-        className="animate-fade-in max-w-full h-auto"
-      />
-    </motion.div>
-  </div>
+
 </motion.div>
 
 			{/* Features Section with Improved Responsiveness */}

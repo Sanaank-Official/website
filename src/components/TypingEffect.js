@@ -39,12 +39,20 @@ const TypingEffect = () => {
 
 	return (
 		<div className="text-center mt-16">
-			<h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black  mb-4 text-left ">
-			Help to improve your earnings<br /> from more{" "}
-				<span className="text-black inline">{displayedText}</span>
-				<span className="blinking-cursor inline">|</span>
-			</h1>
-		</div>
+    {/* Mobile view */}
+    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 text-left md:hidden">
+      Help to improve <br />your earnings <br />from more{" "}
+      <span className="text-black inline">{displayedText}</span>
+      <span className="blinking-cursor inline">|</span>
+    </h1>
+
+    {/* Web view */}
+    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 text-left hidden md:block">
+      Help to improve your earnings<br /> from more{" "}
+      <span className="text-black inline">{displayedText}</span>
+      <span className="blinking-cursor inline">|</span>
+    </h1>
+  </div>
 	);
 };
 
