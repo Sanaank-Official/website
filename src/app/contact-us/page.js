@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
 	FaMapMarkerAlt,
 	FaPhoneAlt,
@@ -16,7 +18,7 @@ export default function ContactUs() {
 		email: "",
 		message: "",
 	});
-	const [status, setStatus] = useState("");
+	const [sending, setSending] = useState(false);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -25,7 +27,8 @@ export default function ContactUs() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		setStatus("Sending...");
+
+		setSending(true);
 
 		try {
 			const response = await fetch("/api/sendEmail", {
@@ -35,19 +38,25 @@ export default function ContactUs() {
 			});
 
 			if (response.ok) {
-				setStatus("Message sent successfully!");
+				toast.success("Message sent successfully!");
 				setFormData({ name: "", email: "", message: "" });
 			} else {
-				setStatus("Failed to send message. Please try again.");
+				toast.error(
+					"Failed to send message. Please try again after 10mins"
+				);
 			}
 		} catch (error) {
 			console.error("Error:", error);
-			setStatus("Error sending message.");
+			toast.error("Error sending message");
+		} finally {
+			setSending(false);
 		}
 	};
 
 	return (
 		<div className="contact-us">
+			{/* Toast Container for displaying notifications */}
+			<ToastContainer position="top-right" className="mt-24" />
 			{/* Hero Section */}
 			<div className="hero-section">
 				<Image
@@ -58,25 +67,25 @@ export default function ContactUs() {
 				/>
 				<div className="hero-overlay">
 					<h1 className="hero-title">Contact Us</h1>
-					<p className="hero-subtitle">We'd Love to Hear from You!</p>
+					<p className="hero-subtitle">
+						We&apos;d Love to Hear from You!
+					</p>
 				</div>
 			</div>
-
 			<p className="para1">
 				<strong>Have questions, feedback, or need assistance?</strong>
-				<br /> The Sanaank team is here to help. <br /> Whether you're a
-				quiz enthusiast or new to our platform, we're just a message
-				away.
+				<br /> The Sanaank team is here to help. <br /> Whether
+				you&apos;re a quiz enthusiast or new to our platform, we&apos;re
+				just a message away.
 			</p>
 			<div className="custom-divider"></div>
-
 			{/* Contact Form and Info Section */}
 			<div className="contact-section">
 				{/* Contact Form */}
 				<div className="form-container">
 					<h2 className="form-title">
-						Alternatively, fill out the form below, and we'll get
-						back to you as soon as possible:
+						Alternatively, fill out the form below, and we&apos;ll
+						get back to you as soon as possible:
 					</h2>
 					<form onSubmit={handleSubmit}>
 						<label>Name</label>
@@ -108,8 +117,9 @@ export default function ContactUs() {
 							onChange={handleChange}
 							required></textarea>
 
-						<button type="submit">Submit Form</button>
-						<p>{status}</p>
+						<button type="submit">
+							{sending ? "Sending..." : "Submit Form"}
+						</button>
 					</form>
 				</div>
 
