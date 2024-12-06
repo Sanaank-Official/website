@@ -229,7 +229,7 @@ const Home = () => {
                   <h3 className="text-xl font-bold text-gray-800 mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600">{feature.desc}</p>
+                  <p className="text-customGray">{feature.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -342,7 +342,7 @@ const Home = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="text-gray-700 text-lg"
+                  className="text-customGray text-lg"
                 >
                   {selected === "Download & Register" && (
                     <p>
@@ -562,17 +562,18 @@ const Home = () => {
       {/* Download Section */}
       <div className="bg-[#f7f8fc] pt-16 flex items-center justify-center">
         {/* Center-align the entire section */}
-        <div className="container mx-auto flex flex-col lg:flex-row justify-around items-center gap-8 px-4">
+        <div className="container mx-auto flex flex-col lg:flex-row justify-around items-center px-4">
           {/* Left Side: Text Content */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-auto">
+          <div className="flex flex-col items-center lg:items-start text-left lg:text-left w-full lg:w-auto">
             {/* Download Heading */}
             <span className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md mb-4 tracking-widest">
               DOWNLOAD
             </span>
-            <h2 className="text-3xl font-bold mb-5 text-gray-800">
+            <h2 className="text-[35px] font-bold mb-5 text-gray-800 font-inter">
               Available on iOS and Android
             </h2>
-            <p className="text-gray-800 leading-loose mb-8 text-sm lg:text-base">
+
+            <p className="text-customGray leading-loose mb-8 text-sm lg:text-base">
               Transform your spare time into exciting moments of learning, fun,
               and rewards.
               <br />
@@ -608,8 +609,8 @@ const Home = () => {
             <Image
               src="/images/misc/2.png"
               alt="User Phone"
-              width={300}
-              height={600}
+              width={350}
+              height={530}
               className="animate-fade-in"
             />
           </div>

@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ["Inter"],
+      },
       textShadow: {
         yellow: "0px 0px 1px #FFD700",
       },
@@ -38,6 +41,8 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         customYellow: "#F9C22A",
+        customGray: "#595d69",
+        header: "#071c39",
       },
     },
   },

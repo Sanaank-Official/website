@@ -60,10 +60,10 @@ export default function Header() {
           width={70}
           height={21}
         />
-        <ul className="flex space-x-8 text-black">
+        <ul className="flex space-x-8 text-header text-sm font-bold font-inter">
           <li className="relative group">
             <Link href="/" className="inline-block">
-              Home
+              HOME
               <span
                 className="absolute bottom-0 left-0 w-0 h-0.5 bg-black 
                                 transition-all duration-300 group-hover:w-full"
@@ -72,7 +72,7 @@ export default function Header() {
           </li>
           <li className="relative group">
             <Link href="/quiz" className="inline-block">
-              Quizzes
+              QUIZZES
               <span
                 className="absolute bottom-0 left-0 w-0 h-0.5 bg-black 
                                 transition-all duration-300 group-hover:w-full"
@@ -81,7 +81,7 @@ export default function Header() {
           </li>
           <li className="relative group">
             <Link href="/about-us" className="inline-block">
-              About Us
+              ABOUT US
               <span
                 className="absolute bottom-0 left-0 w-0 h-0.5 bg-black 
                                 transition-all duration-300 group-hover:w-full"
@@ -90,7 +90,7 @@ export default function Header() {
           </li>
           <li className="relative group">
             <Link href="/contact-us" className="inline-block">
-              Contact Us
+              CONTACT US
               <span
                 className="absolute bottom-0 left-0 w-0 h-0.5 bg-black 
                                 transition-all duration-300 group-hover:w-full"
