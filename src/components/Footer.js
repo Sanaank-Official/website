@@ -24,18 +24,18 @@ export default function Footer() {
 				<div className="container mx-auto px-6 md:px-16 lg:px-24">
 					<div className="flex flex-col items-left">
 						{/* Logo */}
-						<div className="mb-10">
-							<Link href="/">
-								<Image
-									src="/images/logo.png"
-									alt="Sanaank Logo"
-									width={100}
-									height={30}
-								/>
-							</Link>
-						</div>
 						{/* Navigation */}
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+							<div className="mb-10">
+								<Link href="/">
+									<Image
+										src="/images/logos.png"
+										alt="Sanaank Logo"
+										width={200}
+										height={200}
+									/>
+								</Link>
+							</div>
 							<div>
 								<h3 className="font-bold text-lg mb-4">
 									Company

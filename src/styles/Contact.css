@@ -5,6 +5,7 @@
 
 .contact-us .hero-section {
 	position: relative;
+	padding: 10rem;
 	height: 45vh;
 }
 
@@ -16,21 +17,23 @@
 	align-items: center;
 	justify-content: center;
 	padding-top: 2rem;
-	background-color: rgba(0, 0, 0, 0.15);
 }
 
 .contact-us .hero-title {
 	font-size: 3rem;
 	font-weight: bold;
-	color: white;
+	color: black;
 	opacity: 0;
 	transform: translateY(-50px);
 	animation: fadeInSlideDown 1.2s ease-out forwards;
 }
 .contact-us .hero-subtitle {
 	font-size: 1.25rem;
-	color: #f7f7f7;
+	color: black;
 	margin-top: 0.5rem;
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fadeInSlideUp 1.2s ease-out forwards;
 }
 
 .contact-us .contact-section {
@@ -45,7 +48,7 @@
 	font-size: 1.25rem;
 	color: black;
 	background-color: white;
-	padding-top: 2rem;
+	padding: 2rem 2rem 0 2rem;
 }
 
 .custom-divider {
@@ -178,6 +181,17 @@
 	0% {
 		opacity: 0;
 		transform: translateY(-50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeInSlideUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
 	}
 	100% {
 		opacity: 1;
