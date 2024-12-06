@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "font-awesome": "^4.7.0",
     "framer-motion": "^11.13.1",
     "next": "15.0.3",
     "nodemailer": "^6.9.16",
