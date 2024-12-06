@@ -8,6 +8,7 @@ import {
   useAnimation,
   AnimatePresence,
 } from "framer-motion";
+import CustomerReviews from "../components/CustomerReviews";
 import FAQSection from "../components/FAQ";
 import TypingEffect from "../components/TypingEffect";
 import StateSection from "../components/Statesections";
@@ -393,7 +394,9 @@ const Home = () => {
       <div>
         <FAQSection />
       </div>
-
+      <div>
+        <CustomerReviews />
+      </div>
       {/* Customer Reviews Section with Animation */}
       <motion.div
         className="bg-gray-50 py-16"
