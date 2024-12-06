@@ -1,15 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FaFacebook,
-  FaTwitter,
-  FaLinkedin,
-  FaInstagram,
-  FaArrowUp,
-} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaArrowUp } from "react-icons/fa";
 
 export default function Footer() {
-  // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -20,52 +13,48 @@ export default function Footer() {
   return (
     <div>
       {/* Footer */}
-      <footer className="bg-white text-black py-12 border-t border-gray-300">
+      <footer className="bg-gray-100 text-gray-800 py-12 border-t border-gray-300">
         <div className="container mx-auto px-6 md:px-16 lg:px-24">
-          <div className="flex flex-col items-left">
-            {/* Logo */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Logo Section */}
+            <div className="flex flex-col items-start">
+              <Link href="/">
+                <Image
+                  src="/images/logot.png"
+                  alt="Sanaank Logo"
+                  width={200}
+                  height={200}
+                />
+              </Link>
+              <p className="mt-4 text-sm text-gray-600">
+                Empowering your business with the best tools.
+              </p>
+            </div>
+
             {/* Navigation */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-              <div className="mb-10">
-                <Link href="/">
-                  <Image
-                    src="/images/logot.png"
-                    alt="Sanaank Logo"
-                    width={200}
-                    height={200}
-                  />
-                </Link>
-              </div>
+            <div className="grid grid-cols-2 gap-8 text-left">
               <div>
                 <h3 className="font-bold text-lg mb-4">Company</h3>
                 <ul className="space-y-2">
                   <li>
-                    <Link
-                      href="/"
-                      className="text-sm hover:text-gray-600 relative group"
-                    >
+                    <Link href="/" className="text-sm hover:text-gray-600">
                       Home
-                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                   </li>
-
                   <li>
                     <Link
                       href="/about-us"
-                      className="text-sm hover:text-gray-600 relative group"
+                      className="text-sm hover:text-gray-600"
                     >
                       About Us
-                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                   </li>
-
                   <li>
                     <Link
                       href="/contact-us"
-                      className="text-sm hover:text-gray-600 relative group"
+                      className="text-sm hover:text-gray-600"
                     >
                       Contact Us
-                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                   </li>
                 </ul>
@@ -74,67 +63,73 @@ export default function Footer() {
                 <h3 className="font-bold text-lg mb-4">Product</h3>
                 <ul className="space-y-2">
                   <li>
-                    <Link
-                      href="/"
-                      className="text-sm hover:text-gray-600 relative group"
-                    >
+                    <Link href="/" className="text-sm hover:text-gray-600">
                       Features
-                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                   </li>
-
                   <li>
-                    <Link
-                      href="/"
-                      className="text-sm hover:text-gray-600 relative group"
-                    >
+                    <Link href="/" className="text-sm hover:text-gray-600">
                       Reviews
-                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/"
-                      className="text-sm hover:text-gray-600 relative group"
-                    >
+                    <Link href="/" className="text-sm hover:text-gray-600">
                       Download
-                      <span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
+
+            {/* Contact Info */}
+            <div className="flex flex-col items-start text-left">
+              <h3 className="font-bold text-lg mb-4">Contact Us</h3>
+              <p className="text-sm mb-2">
+                <strong>Address:</strong>
+                <br />
+                123 Street Name, Business Park, City, State, ZIP
+              </p>
+              <p className="text-sm mb-4">
+                <strong>Phone:</strong> +1 234 567 890
+              </p>
+              {/* Social Media */}
+              <div className="flex space-x-4">
+                <a
+                  href="#"
+                  className="p-2 rounded-full bg-customYellow text-white hover:opacity-80"
+                >
+                  <FaFacebook size={20} />
+                </a>
+                <a
+                  href="#"
+                  className="p-2 rounded-full bg-customYellow text-white hover:opacity-80"
+                >
+                  <FaTwitter size={20} />
+                </a>
+                <a
+                  href="#"
+                  className="p-2 rounded-full bg-customYellow text-white hover:opacity-80"
+                >
+                  <FaInstagram size={20} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
-      <footer className="bg-white text-black py-0 border-t border-gray-300">
-        {/* Footer Bottom */}
-        <div className="bg-white py-4 px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-          {/* Copyright */}
-          <p className="text-sm md:ml-96 text-center md:text-left text-gray-500 mb-4 md:mb-0">
-            © Copyright 2024 - Sanaank Quiz App
+
+      {/* Footer Bottom */}
+      <footer className="bg-gray-200 text-gray-600 py-4">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+          <p className="text-sm">
+            © 2024 Sanaank Quiz App. All rights reserved.
           </p>
-          {/* Social Media */}
-          <div className="flex space-x-4 mb-4 md:mb-0">
-            <a href="#" className="p-2 rounded-full bg-customYellow text-white">
-              <FaFacebook size={20} />
-            </a>
-            <a href="#" className="p-2 rounded-full bg-customYellow text-white">
-              <FaTwitter size={20} />
-            </a>
-            <a href="#" className="p-2 rounded-full bg-customYellow text-white">
-              <FaInstagram size={20} />
-            </a>
-          </div>
-          {/* Scroll to Top */}
-          <div className="flex items-center space-x-6">
-            <a
-              onClick={scrollToTop}
-              className="p-2 rounded-full bg-gray-800 text-white cursor-pointer"
-            >
-              <FaArrowUp size={20} />
-            </a>
-          </div>
+          <button
+            onClick={scrollToTop}
+            className="mt-4 md:mt-0 p-2 rounded-full bg-gray-800 text-white hover:bg-gray-700"
+          >
+            <FaArrowUp size={20} />
+          </button>
         </div>
       </footer>
     </div>
