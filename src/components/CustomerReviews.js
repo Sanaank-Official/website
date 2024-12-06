@@ -31,11 +31,13 @@ const CustomerReviews = () => {
   const ref5 = useRef(null);
   const inView5 = useInView(ref5, { once: true, amount: 0.2 });
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  const handleSwipe = (direction) => {
-    if (direction === "left") {
+  const handleSwipe = (swipeDirection) => {
+    setDirection(swipeDirection === "left" ? 1 : -1);
+    if (swipeDirection === "left") {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % comments.length);
-    } else if (direction === "right") {
+    } else if (swipeDirection === "right") {
       setCurrentIndex(
         (prevIndex) => (prevIndex - 1 + comments.length) % comments.length
       );
@@ -65,6 +67,33 @@ const CustomerReviews = () => {
     onSwipedLeft: () => handleSwipe("left"),
     onSwipedRight: () => handleSwipe("right"),
   });
+  const slideVariants = {
+    enter: (direction) => {
+      return {
+        x: direction > 0 ? "100%" : "-100%",
+        opacity: 0,
+      };
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => {
+      return {
+        zIndex: 0,
+        x: direction < 0 ? "100%" : "-100%",
+        opacity: 0,
+      };
+    },
+  };
+
+  const swipeTransition = {
+    type: "tween",
+    stiffness: 300,
+    damping: 30,
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -131,37 +160,41 @@ const CustomerReviews = () => {
               className="relative w-full overflow-hidden"
               {...swipeHandlers}
             >
-              {/* Review Box */}
-              <AnimatePresence>
-                <motion.div
-                  key={currentIndex}
-                  initial={{ x: "100%", opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: "-100%", opacity: 0 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 30,
-                  }}
-                  className="bg-[#f0f4fd] rounded-lg p-6 shadow-md mx-auto w-full"
-                  style={{
-                    maxWidth: "95%",
-                    minHeight: "480px",
-                  }}
-                >
-                  {renderStars()}
-
-                  <p className="font-bold text-lg text-gray-800 mb-4 text-left">
-                    {comments[currentIndex].title}
-                  </p>
-                  <p className="text-gray-700 text-left leading-relaxed">
-                    {comments[currentIndex].content}
-                  </p>
-                  <p className="mt-6 text-customYellow font-bold text-left">
-                    {comments[currentIndex].name}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
+              <div className="relative w-full" style={{ height: "480px" }}>
+                {/* Review Box */}
+                <AnimatePresence initial={false} custom={direction}>
+                  <motion.div
+                    key={currentIndex}
+                    custom={direction}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={swipeTransition}
+                    className="absolute h-full"
+                  >
+                    <div
+                      className="bg-[#f0f4fd] rounded-lg p-6 shadow-md mx-auto
+                    w-full"
+                      style={{
+                        maxWidth: "95%",
+                        minHeight: "480px",
+                      }}
+                    >
+                      {renderStars()}
+                      <p className="font-bold text-lg text-gray-800 mb-4 text-left">
+                        {comments[currentIndex].title}
+                      </p>
+                      <p className="text-gray-700 text-left leading-relaxed">
+                        {comments[currentIndex].content}
+                      </p>
+                      <p className="mt-6 text-customYellow font-bold text-left">
+                        {comments[currentIndex].name}
+                      </p>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
 
               {/* Dots Navigation */}
               <div className="flex justify-center mt-4 space-x-2">
@@ -281,11 +314,10 @@ const CustomerReviews = () => {
                 </p>
                 <p className="text-gray-700 text-left leading-relaxed">
                   Sanaank is hands down the best quiz gaming app I've ever used.
-                  The quizzes are well-designed and cover so many topics. I've
-                  learned a lot while playing, and the cash prizes are the
-                  cherry on top. With just ₹50, I entered a science quiz and won
-                  ₹100,000 last week! This app is perfect for anyone who loves
-                  knowledge and rewards.
+                  The quizzes are well-designed and cover so many topics. The
+                  cash prizes are the cherry on top. With just ₹50, I entered a
+                  science quiz and won ₹100,000 last week! This app is perfect
+                  for anyone who loves knowledge and rewards.
                 </p>
                 <p className="mt-6 text-customYellow font-bold text-left">
                   - Priya Verma, Bangalore
