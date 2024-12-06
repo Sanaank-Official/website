@@ -48,60 +48,70 @@ export default function Header() {
       {/* Desktop Header */}
       <nav
         className={`
-          fixed top-0 left-0 w-full flex items-center justify-between 
-          px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 
-          py-4 sm:py-5 md:py-6 
-          transition-all duration-300 z-50 
-          ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}
-        `}
+                fixed top-0 left-0 w-full flex items-center justify-around 
+                text-lg p-8 transition-all duration-300 z-50 
+                ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}
+                max-md:hidden
+            `}
       >
         <Image
           src={isScrolled ? "/images/logo.png" : "/images/logo-light.png"}
           alt="Sanaank Logo"
-          width={50}
-          height={50}
-          className="w-10 sm:w-12 md:w-14 lg:w-16 xl:w-20"
+          width={70}
+          height={21}
         />
-        <ul
-          className="hidden md:flex space-x-4 lg:space-x-6 xl:space-x-8 
-          text-xs sm:text-sm md:text-base lg:text-sm 
-          font-bold font-inter text-header"
-        >
-          {[
-            { name: "HOME", path: "/" },
-            { name: "QUIZZES", path: "/quiz" },
-            { name: "ABOUT US", path: "/about-us" },
-            { name: "CONTACT US", path: "/contact-us" },
-          ].map((item) => (
-            <li key={item.name} className="relative group">
-              <Link href={item.path} className="inline-block">
-                {item.name}
-                <span
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-black 
-                  transition-all duration-300 group-hover:w-full"
-                ></span>
-              </Link>
-            </li>
-          ))}
+        <ul className="flex space-x-8 text-header text-sm font-bold font-inter">
+          <li className="relative group">
+            <Link href="/" className="inline-block">
+              HOME
+              <span
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-black 
+                                transition-all duration-300 group-hover:w-full"
+              ></span>
+            </Link>
+          </li>
+          <li className="relative group">
+            <Link href="/quiz" className="inline-block">
+              QUIZZES
+              <span
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-black 
+                                transition-all duration-300 group-hover:w-full"
+              ></span>
+            </Link>
+          </li>
+          <li className="relative group">
+            <Link href="/about-us" className="inline-block">
+              ABOUT US
+              <span
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-black 
+                                transition-all duration-300 group-hover:w-full"
+              ></span>
+            </Link>
+          </li>
+          <li className="relative group">
+            <Link href="/contact-us" className="inline-block">
+              CONTACT US
+              <span
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-black 
+                                transition-all duration-300 group-hover:w-full"
+              ></span>
+            </Link>
+          </li>
         </ul>
         <a
           href="#"
           className={`
-            flex items-center justify-center space-x-1 sm:space-x-2 
-            px-3 sm:px-5 md:px-6 lg:px-7 
-            py-1 sm:py-2 
-            text-white font-bold rounded-full 
-            text-xs sm:text-sm md:text-base 
-            transition duration-100 
-            ${isScrolled ? "bg-customYellow" : "bg-black"}
-          `}
+        flex items-center justify-center space-x-2 px-7 py-1 text-white font-bold rounded-full 
+        transition duration-100 
+        ${isScrolled ? "bg-customYellow" : "bg-black"}
+    `}
         >
           <i
-            className="fa fa-arrow-down text-white text-xs sm:text-sm"
-            style={{ marginTop: "2px" }}
+            className="fa fa-arrow-down text-white text-sm"
+            style={{ marginTop: "3px" }} // Space between icon and text
             aria-hidden="true"
           ></i>
-          <span className="tracking-wider">DOWNLOAD</span>
+          <span className="text-sm tracking-wider">DOWNLOAD</span>
         </a>
       </nav>
 
@@ -113,29 +123,20 @@ export default function Header() {
             alt="Sanaank Logo"
             width={50}
             height={15}
-            className="w-10 sm:w-12"
           />
           <a
             href="#"
-            className="flex items-center justify-center space-x-2 
-              bg-customYellow text-white 
-              px-3 sm:px-4 
-              py-1 sm:py-2 
-              rounded-full 
-              text-xs sm:text-sm"
+            className="flex items-center justify-center space-x-2 bg-customYellow text-white px-4 py-2 rounded-full text-sm"
           >
             <i
-              className="fa fa-arrow-down text-white text-xs sm:text-sm"
-              style={{ marginTop: "2px" }}
+              className="fa fa-arrow-down text-white text-xs"
+              style={{ marginTop: "3px" }} // Space between icon and text
               aria-hidden="true"
             ></i>
-            <span className="tracking-wider">DOWNLOAD</span>
+            <span className="text-sm tracking-wider">DOWNLOAD</span>
           </a>
 
-          <button
-            onClick={toggleMobileMenu}
-            className="text-xl sm:text-2xl text-black"
-          >
+          <button onClick={toggleMobileMenu} className="text-2xl text-black">
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
@@ -148,19 +149,20 @@ export default function Header() {
             }`}
           >
             <ul className="flex flex-col items-center space-y-6 p-6">
-              {[
-                { name: "Home", path: "/" },
-                { name: "Quizzes", path: "/quiz" },
-                { name: "About Us", path: "/about-us" },
-                { name: "Contact Us", path: "/contact-us" },
-              ].map((item) => (
-                <li key={item.name}>
+              {["Home", "Quizzes", "About Us", "Contact Us"].map((item) => (
+                <li key={item}>
                   <Link
-                    href={item.path}
+                    href={`/${
+                      item === "Home"
+                        ? ""
+                        : item === "Quizzes"
+                        ? "quiz"
+                        : item.replace(" ", "-").toLowerCase()
+                    }`}
                     onClick={closeMobileMenu}
-                    className="text-xl sm:text-2xl text-black"
+                    className="text-2xl text-black"
                   >
-                    {item.name}
+                    {item}
                   </Link>
                 </li>
               ))}
