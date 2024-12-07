@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata = {
 	title: "Sanaank - Quiz App",
-	description: "An information website for quiz app",
+	description: "An informational website for Sanaank quiz app",
 };
 
 export default function RootLayout({ children }) {

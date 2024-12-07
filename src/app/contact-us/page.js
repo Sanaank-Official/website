@@ -58,13 +58,18 @@ export default function ContactUs() {
 			{/* Toast Container for displaying notifications */}
 			<ToastContainer position="top-right" className="mt-24" />
 			{/* Hero Section */}
-			<div className="hero-section">
-				<Image
+			<div
+				className="hero-section"
+				style={{
+					backgroundImage:
+						"radial-gradient(circle, #dc8d00, #e39616, #e99f24, #f0a931, #f6b23c, #f6b23c, #f6b23c, #f6b23c, #f0a931, #e99f24, #e39616, #dc8d00)",
+				}}>
+				{/* <Image
 					src="/images/background/3.jpg"
 					alt="Contact Background"
 					fill
 					className="object-cover"
-				/>
+				/> */}
 				<div className="hero-overlay">
 					<h1 className="hero-title">Contact Us</h1>
 					<p className="hero-subtitle">

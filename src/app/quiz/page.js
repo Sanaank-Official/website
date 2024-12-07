@@ -159,60 +159,58 @@ export default function Quizzes() {
 	];
 
 	return (
-		<div className="w-full bg-gradient-to-br from-yellow-50 to-white overflow-hidden">
+		<div className="w-full">
 			{/* Animated Particle-like Background Hero */}
-			<section className="relative w-full min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-yellow-400 to-yellow-600 text-white overflow-hidden md:p-40">
+			<section
+				className="relative h-[50vh] md:p-40"
+				style={{
+					backgroundImage:
+						"radial-gradient(circle, #dc8d00, #e39616, #e99f24, #f0a931, #f6b23c, #f6b23c, #f6b23c, #f6b23c, #f0a931, #e99f24, #e39616, #dc8d00)",
+				}}>
 				{/* Floating Particles Effect */}
 				<div className="absolute inset-0 pointer-events-none">
-					{typeof window !== "undefined" &&
-						[...Array(20)].map((_, i) => (
-							<motion.div
-								key={i}
-								initial={{
-									x: Math.random() * window.innerWidth,
-									y: Math.random() * window.innerHeight,
-									opacity: 0,
-								}}
-								animate={{
-									x: [
-										Math.random() * window.innerWidth,
-										Math.random() * window.innerWidth,
-										Math.random() * window.innerWidth,
-									],
-									y: [
-										Math.random() * window.innerHeight,
-										Math.random() * window.innerHeight,
-										Math.random() * window.innerHeight,
-									],
-									opacity: [0, 0.5, 0],
-								}}
-								transition={{
-									duration: Math.random() * 10 + 5,
-									repeat: Infinity,
-									repeatType: "loop",
-								}}
-								className="absolute w-2 h-2 bg-white/30 rounded-full"
-							/>
-						))}
+					{[...Array(20)].map((_, i) => (
+						<motion.div
+							key={i}
+							initial={{
+								x: Math.random() * window.innerWidth,
+								y: Math.random() * window.innerHeight,
+								opacity: 0,
+							}}
+							animate={{
+								x: [
+									Math.random() * window.innerWidth,
+									Math.random() * window.innerWidth,
+									Math.random() * window.innerWidth,
+								],
+								y: [
+									Math.random() * window.innerHeight,
+									Math.random() * window.innerHeight,
+									Math.random() * window.innerHeight,
+								],
+								opacity: [0, 0.5, 0],
+							}}
+							transition={{
+								duration: Math.random() * 10 + 5,
+								repeat: Infinity,
+								repeatType: "loop",
+							}}
+							className="absolute w-2 h-2 bg-white/30 rounded-full"
+						/>
+					))}
 				</div>
 
 				<motion.div
 					initial={{ opacity: 0, scale: 0.9 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 1 }}
-					className="relative z-10 text-center max-w-4xl px-4">
-					<h1 className="text-5xl font-bold mb-6 drop-shadow-md">
-						Sanaank: Quiz Revolution
+					className="absolute inset-0 flex flex-col justify-center items-center text-center pt-8 px-4">
+					<h1 className="text-5xl text-white font-bold drop-shadow-md leading-snug">
+						Play Quizzes
 					</h1>
-					<p className="text-xl text-black mb-8 font-medium drop-shadow-xl">
+					<p className="text-xl text-black font-medium drop-shadow-xl pt-8">
 						Where Knowledge Meets Excitement and Rewards
 					</p>
-					{/* <motion.button
-						whileHover={{ scale: 1.1 }}
-						whileTap={{ scale: 0.9 }}
-						className="bg-white text-yellow-600 px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:bg-yellow-50 transition-all">
-						Start Your Quiz Journey
-					</motion.button> */}
 				</motion.div>
 			</section>
 

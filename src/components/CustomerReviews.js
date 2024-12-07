@@ -175,8 +175,7 @@ const CustomerReviews = () => {
 										transition={swipeTransition}
 										className="absolute h-full">
 										<div
-											className="bg-[#f0f4fd] rounded-lg p-6 shadow-md mx-auto
-                    w-full"
+											className="bg-[#f0f4fd] rounded-lg p-6 shadow-md mx-auto w-full"
 											style={{
 												maxWidth: "95%",
 												minHeight: "480px",

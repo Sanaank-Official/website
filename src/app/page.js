@@ -100,15 +100,20 @@ const Home = () => {
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1 }}
 				className="relative min-h-screen flex justify-center md:p-28">
-				<div className="absolute inset-0">
-					<Image
+				<div
+					className="absolute inset-0"
+					style={{
+						backgroundImage:
+							"radial-gradient(circle, #dc8d00, #e39616, #e99f24, #f0a931, #f6b23c, #f6b23c, #f6b23c, #f6b23c, #f0a931, #e99f24, #e39616, #dc8d00)",
+					}}>
+					{/* <Image
 						src="/images/background/3.jpg"
 						alt="Background Image"
 						fill
 						className="object-cover"
 						priority
 						quality={90}
-					/>
+					/> */}
 				</div>
 				<div
 					className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 
@@ -314,9 +319,9 @@ const Home = () => {
 											whileTap={{ scale: 0.9 }}
 											className={`px-5 py-3 rounded-md font-semibold w-full ${
 												selected === item
-													? "bg-yellow-400 text-white"
-													: "bg-yellow-50 text-yellow-300 text-shadow-yellow"
-											} border border-yellow-300 shadow-md md:w-auto`}
+													? "bg-yellow-500 text-white"
+													: "bg-yellow-50 text-yellow-500 text-shadow-yellow"
+											} border border-yellow-400 shadow-md md:w-auto`}
 											onClick={() => setSelected(item)}>
 											{item}
 										</motion.button>
