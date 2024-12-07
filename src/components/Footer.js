@@ -94,7 +94,7 @@ export default function Footer() {
 						{/* Contact Us Section */}
 						<div className="w-full lg:w-1/4 hidden lg:block">
 							<h3 className="font-bold text-lg mb-4">
-								Contact Us
+								Get in touch
 							</h3>
 							<ul className="space-y-2">
 								<li className="text-sm">
@@ -103,8 +103,15 @@ export default function Footer() {
 									<br /> Bhugaon, Bavdhan,
 									<br /> Pune, 412115
 								</li>
-								<li className="text-sm">+91 9665657759</li>
-								<li className="flex space-x-4">
+								<li className="text-sm">+91-9665657759</li>
+								<li className="text-sm">
+									<a
+										href="mailto:support@sanaank.com"
+										className="hover:text-gray-600">
+										support@sanaank.com
+									</a>
+								</li>
+								<li className="flex space-x-4 pt-2">
 									<a
 										href="#"
 										className="p-2 rounded-full bg-customYellow text-white">
@@ -119,13 +126,6 @@ export default function Footer() {
 										href="#"
 										className="p-2 rounded-full bg-customYellow text-white">
 										<FaInstagram size={20} />
-									</a>
-								</li>
-								<li className="text-sm">
-									<a
-										href="mailto:support@sanaank.com"
-										className="hover:text-gray-600">
-										support@sanaank.com
 									</a>
 								</li>
 							</ul>
@@ -143,7 +143,7 @@ export default function Footer() {
 					</p>
 					<div className="flex flex-row gap-10">
 						{/* Social Media */}
-						<div className="flex space-x-4 mb-2 md:flex mt-2 md:hidden">
+						<div className="flex space-x-4 mb-2 mt-2 md:hidden">
 							<a
 								href="#"
 								className="p-2 rounded-full bg-customYellow text-white">
