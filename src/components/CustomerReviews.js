@@ -8,19 +8,19 @@ const comments = [
 	{
 		title: "A Game-Changer for Quiz Lovers!",
 		content:
-			"I've always loved trivia games, but Sanaank takes it to the next level! The app is super easy to use, and the variety of quizzes keeps things exciting. I started with a ₹50 quiz just to test the waters, and guess what? I won ₹50,000 on my first try! It's fun, rewarding, and a great way to challenge yourself. Highly recommend!",
+			"I&apos;ve always loved trivia games, but Sanaank takes it to the next level! The app is super easy to use, and the variety of quizzes keeps things exciting. I started with a ₹50 quiz just to test the waters, and guess what? I won ₹50,000 on my first try! It&apos;s fun, rewarding, and a great way to challenge yourself. Highly recommend!",
 		name: "- Rohan Sharma, Mumbai",
 	},
 	{
 		title: "Learn, Play, and Earn – All in One App!",
 		content:
-			"Sanaank is hands down the best quiz gaming app I've ever used. The quizzes are well-designed and cover so many topics. I've learned a lot while playing, and the cash prizes are the cherry on top. With just ₹50, I entered a science quiz and won ₹100,000 last week! This app is perfect for anyone who loves knowledge and rewards.",
+			"Sanaank is hands down the best quiz gaming app I&apos;ve ever used. The quizzes are well-designed and cover so many topics. I&apos;ve learned a lot while playing, and the cash prizes are the cherry on top. With just ₹50, I entered a science quiz and won ₹100,000 last week! This app is perfect for anyone who loves knowledge and rewards.",
 		name: "- Priya Verma, Bangalore",
 	},
 	{
 		title: "Simple, Fun, and Rewarding!",
 		content:
-			"I downloaded Sanaank out of curiosity, but now I'm hooked! The app is intuitive, and I love how affordable it is to participate in quizzes. It's a great way to test your knowledge and earn extra cash. I never thought I'd win ₹75,000 for answering questions on my favorite topic - sports! Thanks, Sanaank, for this amazing platform.",
+			"I downloaded Sanaank out of curiosity, but now I&apos;m hooked! The app is intuitive, and I love how affordable it is to participate in quizzes. It&apos;s a great way to test your knowledge and earn extra cash. I never thought I&apos;d win ₹75,000 for answering questions on my favorite topic - sports! Thanks, Sanaank, for this amazing platform.",
 		name: "- Arjun Mehta, Delhi",
 	},
 ];
@@ -270,14 +270,14 @@ const CustomerReviews = () => {
 									A Game-Changer for Quiz Lovers!
 								</p>
 								<p className="text-gray-700 text-left leading-relaxed">
-									I've always loved trivia games, but Sanaank
-									takes it to the next level! The app is super
-									easy to use, and the variety of quizzes
-									keeps things exciting. I started with a ₹50
-									quiz just to test the waters, and guess
-									what? I won ₹50,000 on my first try! It's
-									fun, rewarding, and a great way to challenge
-									yourself. Highly recommend!
+									I&apos;ve always loved trivia games, but
+									Sanaank takes it to the next level! The app
+									is super easy to use, and the variety of
+									quizzes keeps things exciting. I started
+									with a ₹50 quiz just to test the waters, and
+									guess what? I won ₹50,000 on my first try!
+									It&apos;s fun, rewarding, and a great way to
+									challenge yourself. Highly recommend!
 								</p>
 								<p className="mt-6 text-customYellow font-bold text-left">
 									- Rohan Sharma, Mumbai
@@ -312,7 +312,7 @@ const CustomerReviews = () => {
 								</p>
 								<p className="text-gray-700 text-left leading-relaxed">
 									Sanaank is hands down the best quiz gaming
-									app I've ever used. The quizzes are
+									app I&apos;ve ever used. The quizzes are
 									well-designed and cover so many topics. The
 									cash prizes are the cherry on top. With just
 									₹50, I entered a science quiz and won
@@ -352,13 +352,14 @@ const CustomerReviews = () => {
 								</p>
 								<p className="text-gray-700 text-left leading-relaxed">
 									I downloaded Sanaank out of curiosity, but
-									now I'm hooked! The app is intuitive, and I
-									love how affordable it is to participate in
-									quizzes. It's a great way to test your
-									knowledge and earn extra cash. I never
-									thought I'd win ₹75,000 for answering
-									questions on my favorite topic - sports!
-									Thanks, Sanaank, for this amazing platform.
+									now I&apos;m hooked! The app is intuitive,
+									and I love how affordable it is to
+									participate in quizzes. It&apos;s a great
+									way to test your knowledge and earn extra
+									cash. I never thought I&apos;d win ₹75,000
+									for answering questions on my favorite topic
+									- sports! Thanks, Sanaank, for this amazing
+									platform.
 								</p>
 								<p className="mt-6 text-customYellow font-bold text-left">
 									- Arjun Mehta, Delhi
