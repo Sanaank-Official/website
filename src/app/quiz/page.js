@@ -169,35 +169,36 @@ export default function Quizzes() {
 				}}>
 				{/* Floating Particles Effect */}
 				<div className="absolute inset-0 pointer-events-none">
-					{[...Array(20)].map((_, i) => (
-						<motion.div
-							key={i}
-							initial={{
-								x: Math.random() * window.innerWidth,
-								y: Math.random() * window.innerHeight,
-								opacity: 0,
-							}}
-							animate={{
-								x: [
-									Math.random() * window.innerWidth,
-									Math.random() * window.innerWidth,
-									Math.random() * window.innerWidth,
-								],
-								y: [
-									Math.random() * window.innerHeight,
-									Math.random() * window.innerHeight,
-									Math.random() * window.innerHeight,
-								],
-								opacity: [0, 0.5, 0],
-							}}
-							transition={{
-								duration: Math.random() * 10 + 5,
-								repeat: Infinity,
-								repeatType: "loop",
-							}}
-							className="absolute w-2 h-2 bg-white/30 rounded-full"
-						/>
-					))}
+					{typeof window !== "undefined" &&
+						[...Array(20)].map((_, i) => (
+							<motion.div
+								key={i}
+								initial={{
+									x: Math.random() * window.innerWidth,
+									y: Math.random() * window.innerHeight,
+									opacity: 0,
+								}}
+								animate={{
+									x: [
+										Math.random() * window.innerWidth,
+										Math.random() * window.innerWidth,
+										Math.random() * window.innerWidth,
+									],
+									y: [
+										Math.random() * window.innerHeight,
+										Math.random() * window.innerHeight,
+										Math.random() * window.innerHeight,
+									],
+									opacity: [0, 0.5, 0],
+								}}
+								transition={{
+									duration: Math.random() * 10 + 5,
+									repeat: Infinity,
+									repeatType: "loop",
+								}}
+								className="absolute w-2 h-2 bg-white/30 rounded-full"
+							/>
+						))}
 				</div>
 
 				<motion.div
