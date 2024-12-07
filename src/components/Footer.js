@@ -5,7 +5,6 @@ import Image from "next/image";
 import { FaFacebook, FaTwitter, FaInstagram, FaArrowUp } from "react-icons/fa";
 
 export default function Footer() {
-  // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -18,7 +17,7 @@ export default function Footer() {
       {/* Footer */}
       <footer className="bg-white text-black py-12 border-t border-gray-300">
         <div className="container mx-auto px-6 md:px-16 lg:px-24">
-          <div className="flex flex-wrap justify-between items-start">
+          <div className="flex flex-wrap justify-between items-start text-left">
             {/* Logo Section */}
             <div className="w-full lg:w-1/4 mb-8 lg:mb-0">
               <Link href="/">
@@ -100,15 +99,15 @@ export default function Footer() {
 
             {/* Contact Us Section */}
             <div className="w-full lg:w-1/4 hidden lg:block">
-              <h3 className="font-bold text-lg mb-4 text-left">Contact Us</h3>
+              <h3 className="font-bold text-lg mb-4">Contact Us</h3>
               <ul className="space-y-2">
-                <li className="text-sm text-left">
+                <li className="text-sm">
                   Sanaank (Meterio Edutech Pvt Ltd)
                   <br /> K110, Crescent, Forest Trails,
                   <br /> Bhugaon, Bavdhan,
                   <br /> Pune, 412115
                 </li>
-                <li className="text-sm text-left">+91 9665657759</li>
+                <li className="text-sm">+91 9665657759</li>
                 <li className="flex space-x-4">
                   <a
                     href="#"
@@ -129,7 +128,7 @@ export default function Footer() {
                     <FaInstagram size={20} />
                   </a>
                 </li>
-                <li className="text-sm text-left">
+                <li className="text-sm">
                   <a
                     href="mailto:support@sanaank.com"
                     className="hover:text-gray-600"
@@ -163,7 +162,7 @@ export default function Footer() {
             </a>
           </div>
           {/* Scroll to Top */}
-          <div className="flex items-center space-x-6 ">
+          <div className="flex items-center space-x-6">
             <a
               onClick={scrollToTop}
               className="p-2 rounded-full bg-gray-800 text-white cursor-pointer"
