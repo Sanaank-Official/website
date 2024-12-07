@@ -77,34 +77,36 @@ export default function Header() {
 				<div className="container mx-auto flex justify-around items-center px-4">
 					{/* Left Section (Hidden on Small Screens) */}
 					<div className="hidden sm:flex space-x-4">
-						<a
+						<Link
 							href="https://www.facebook.com/SanaankGaming"
 							className="hover:text-gray-200">
 							<i className="fa fa-facebook"></i>
-						</a>
-						<a
+						</Link>
+						<Link
 							href="https://www.x.com/Sanaank"
 							className="hover:text-gray-200">
 							<i className="fa fa-twitter"></i>
-						</a>
-						<a
+						</Link>
+						<Link
 							href="https://www.instagram.com/SanaankOfficial"
 							className="hover:text-gray-200">
 							<i className="fa fa-instagram"></i>
-						</a>
+						</Link>
 					</div>
 
 					{/* Right Section */}
 					<div className="text-sm">
 						<span className="hidden sm:inline">
-							<a href="/" className="hover:text-gray-200">
+							<Link
+								href="/#download"
+								className="hover:text-gray-200">
 								Latest Version Available!
-							</a>
+							</Link>
 							&nbsp;|&nbsp;
 						</span>
-						<a href="/" className="hover:text-gray-200">
+						<Link href="/" className="hover:text-gray-200">
 							Today&apos;s Deal: Get 50% Discount!
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>
@@ -165,7 +167,7 @@ export default function Header() {
 						</Link>
 					</li>
 				</ul>
-				<a
+				<Link
 					href="/"
 					className={`
         flex items-center justify-center space-x-2 px-7 py-1 text-white font-bold rounded-full 
@@ -177,7 +179,7 @@ export default function Header() {
 						style={{ marginTop: "3px" }} // Space between icon and text
 						aria-hidden="true"></i>
 					<span className="text-sm tracking-wider">DOWNLOAD</span>
-				</a>
+				</Link>
 			</nav>
 
 			{/* Mobile Header */}
@@ -194,13 +196,13 @@ export default function Header() {
 						height={15}
 					/>
 
-					<a href="/" className="download-button">
+					<Link href="/#download" className="download-button">
 						<i
 							className="fa fa-arrow-down text-white text-xs"
 							style={{ marginTop: "3px" }} // Space between icon and text
 							aria-hidden="true"></i>
 						<span className="download-text">DOWNLOAD</span>
-					</a>
+					</Link>
 
 					<button onClick={toggleMobileMenu} className="menu-toggle">
 						{isMobileMenuOpen ? <FaTimes /> : <FaBars />}
