@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../styles/Header.css";
 import "font-awesome/css/font-awesome.min.css";
@@ -10,7 +10,22 @@ import "font-awesome/css/font-awesome.min.css";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        closeMobileMenu();
+      }
+    };
 
+    // Add event listener for clicks
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      // Cleanup event listener on component unmount
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -161,6 +176,7 @@ export default function Header() {
         className={`relative z-50 w-full bg-white shadow-md transition-all duration-1000 md:hidden ${
           isMobileMenuOpen ? "h-[320px]" : "h-[70px]"
         }`}
+        ref={menuRef}
       >
         <div className="header-container">
           <Image
@@ -194,13 +210,13 @@ export default function Header() {
             {["HOME", "QUIZZES", "ABOUT US", "CONTACT US"].map((item) => (
               <li key={item} className="relative w-full pb-2 pl-2 border-b-2">
                 <Link
-                  href={`/${
-                    item === "Home"
-                      ? ""
-                      : item === "Quizzes"
+                  href={
+                    item === "HOME"
+                      ? "/"
+                      : item === "QUIZZES"
                       ? "quiz"
                       : item.replace(" ", "-").toLowerCase()
-                  }`}
+                  }
                   className="text-sm"
                 >
                   {item}
