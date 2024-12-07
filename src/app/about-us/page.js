@@ -9,24 +9,25 @@ const About = () => {
 		<div className="max-w-full bg-gray-50">
 			{/* 1. Hero Section */}
 			<section
-				className="relative bg-cover bg-center flex items-center justify-center md:p-40"
+				className="relative flex items-center justify-center md:p-40"
 				style={{
-					backgroundImage: `url('/images/background/3.jpg')`,
-					height: "40vh",
+					backgroundImage:
+						"radial-gradient(circle, #dc8d00, #e39616, #e99f24, #f0a931, #f6b23c, #f6b23c, #f6b23c, #f6b23c, #f0a931, #e99f24, #e39616, #dc8d00)",
+					height: "45vh",
 				}}>
 				<div className="container mx-auto text-center">
 					<motion.h1
 						initial={{ opacity: 0, y: -50 }}
 						animate={{ opacity: 1, y: 10 }}
 						transition={{ duration: 1 }}
-						className="text-5xl text-white font-bold drop-shadow-md mb-4">
+						className="text-5xl text-white font-bold drop-shadow-md">
 						About Us
 					</motion.h1>
 					<motion.p
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1, delay: 0.3 }}
-						className="text-xl text-black mt-4">
+						className="text-xl text-black font-medium pt-8">
 						Get to know us better
 					</motion.p>
 				</div>
@@ -157,11 +158,7 @@ const About = () => {
 			</motion.section>
 
 			{/* 5. Call to Action */}
-			<section
-				className="bg-cover bg-center py-16 px-6"
-				style={{
-					backgroundImage: `url('/images/background/3.jpg')`,
-				}}>
+			<section className="bg-customYellow bg-cover bg-center py-16 px-6">
 				<div className="container mx-auto text-center">
 					<motion.h2
 						initial={{ opacity: 0, y: -20 }}
@@ -176,7 +173,7 @@ const About = () => {
 						whileInView={{ opacity: 1 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.6, delay: 0.3 }}
-						className="text-xl text-black mb-8 max-w-2xl mx-auto">
+						className="text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
 						Join Sanaank today and turn your curiosity into an
 						exciting opportunity to learn, compete, and win!
 					</motion.p>
