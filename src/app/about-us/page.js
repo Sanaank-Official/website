@@ -15,7 +15,7 @@ const About = () => {
           height: "40vh",
         }}
       >
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto text-left md:text-center">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,8 +69,8 @@ const About = () => {
 
       {/* 3. Key Features */}
       <section className="py-16 px-8 bg-[rgb(253,253,240)]">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+        <div className="container mx-auto text-left">
+          <h2 className="text-3xl font-bold mb-12 text-gray-800 text-center md:text-left">
             Why Choose Sanaank?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -96,7 +96,7 @@ const About = () => {
             ].map((feature, index) => (
               <motion.div
                 key={index}
-                className="relative bg-white p-8 rounded-lg shadow-md text-center overflow-hidden group"
+                className="relative bg-white p-8 rounded-lg shadow-md text-left overflow-hidden group"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -107,7 +107,6 @@ const About = () => {
                   {feature.title}
                 </h3>
                 <p className="text-gray-600">{feature.description}</p>
-
                 {/* Hover effect borders */}
                 <div className="absolute top-0 left-0 right-0 bottom-0 border-2 border-transparent group-hover:border-yellow-500 transition-all duration-300">
                   {/* Top line */}
@@ -129,7 +128,7 @@ const About = () => {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto text-left md:text-center">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">Our Vision</h2>
           <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
             To redefine entertainment by creating a platform where every
@@ -146,13 +145,13 @@ const About = () => {
           backgroundImage: `url('/images/background/3.jpg')`,
         }}
       >
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto ">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-black mb-6"
+            className="text-4xl font-bold text-black mb-6 text-left md:text-center"
           >
             Ready to Test Your Knowledge?
           </motion.h2>
@@ -161,7 +160,7 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-xl text-black mb-8 max-w-2xl mx-auto"
+            className="text-xl text-black mb-8 max-w-2xl mx-auto text-left md:text-center"
           >
             Join Sanaank today and turn your curiosity into an exciting
             opportunity to learn, compete, and win!
