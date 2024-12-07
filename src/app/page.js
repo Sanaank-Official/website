@@ -131,12 +131,12 @@ const Home = () => {
 						</p>
 						<div className="flex md:justify-start md:space-x-4 gap-4">
 							<motion.a
-								href="/quiz"
+								href="#features"
 								className="w-40 px-4 py-2 text-white font-bold rounded-full bg-black transition duration-100 text-center">
 								LEARN MORE
 							</motion.a>
 							<motion.a
-								href="/"
+								href="#download"
 								className="w-40 px-4 py-2 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 border border-black text-center">
 								DOWNLOAD
 							</motion.a>
@@ -245,7 +245,7 @@ const Home = () => {
 						hidden: { opacity: 0, y: 50 },
 						visible: { opacity: 1, y: 0 },
 					}}>
-					<div className="flex flex-col justify-center items-center md:flex-row md:items-center">
+					<div className="flex flex-col justify-around items-center md:flex-row md:items-center">
 						<motion.div
 							initial={{ scale: 0.8, opacity: 0 }}
 							whileInView={{ scale: 1, opacity: 1 }}
@@ -290,7 +290,7 @@ const Home = () => {
 											stiffness: 150,
 										},
 									}}
-									className="text-sm font-bold text-customYellow bg-yellow-100 py-2 px-4 rounded-md tracking-widest">
+									className="text-sm text-center font-bold text-customYellow bg-yellow-100 py-2 px-4 rounded-md tracking-widest">
 									PROFILE
 								</motion.span>
 							</div>
@@ -355,14 +355,14 @@ const Home = () => {
 								{/* Add "LEARN MORE" and "DOWNLOAD" buttons */}
 								<div className="flex space-x-4 mt-8">
 									<motion.a
-										href="/quiz"
+										href="#features"
 										whileHover={{ scale: 1.1 }}
 										whileTap={{ scale: 0.9 }}
 										className="px-7 py-1 text-white font-bold rounded-full bg-black transition duration-100 h-8">
 										LEARN MORE
 									</motion.a>
 									<motion.a
-										href="/"
+										href="#download"
 										whileHover={{ scale: 1.1 }}
 										whileTap={{ scale: 0.9 }}
 										className="px-7 py-1 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 h-8 border border-black">
@@ -378,13 +378,13 @@ const Home = () => {
 			<div>
 				<FAQSection />
 			</div>
-			<div>
+			<div id="reviews">
 				<CustomerReviews />
 			</div>
 			<div>
 				<StateSection />
 			</div>
-			<div>
+			<div id="download">
 				<DownloadSection />
 			</div>
 		</div>

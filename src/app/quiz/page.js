@@ -314,12 +314,7 @@ export default function Quizzes() {
 			</section>
 
 			{/* Final CTA */}
-			<section
-				className="py-16 text-white bg-customYellow text-center relative overflow-hidden"
-				// style={{
-				// 	backgroundImage: `url('/images/background/3.jpg')`,
-				// }}
-			>
+			<section className="py-16 text-white bg-customYellow text-center relative overflow-hidden">
 				<motion.div
 					initial={{ opacity: 0, scale: 0.9 }}
 					whileInView={{ opacity: 1, scale: 1 }}
