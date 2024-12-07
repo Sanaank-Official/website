@@ -38,21 +38,23 @@ const TypingEffect = () => {
 	}, [displayedText, isDeleting, currentWordIndex, words]);
 
 	return (
-		<div className="text-center mt-16">
-    {/* Mobile view */}
-    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 text-left md:hidden">
-      Help to improve <br />your earnings <br />from more{" "}
-      <span className="text-black inline">{displayedText}</span>
-      <span className="blinking-cursor inline">|</span>
-    </h1>
+		<div className="text-center mt-8">
+			{/* Mobile view */}
+			<h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 text-left md:hidden">
+				Help to improve <br />
+				your earnings from <br />
+				more <span className="text-black inline">{displayedText}</span>
+				<span className="blinking-cursor inline">|</span>
+			</h1>
 
-    {/* Web view */}
-    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 text-left hidden md:block">
-      Help to improve your earnings<br /> from more{" "}
-      <span className="text-black inline">{displayedText}</span>
-      <span className="blinking-cursor inline">|</span>
-    </h1>
-  </div>
+			{/* Web view */}
+			<h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 text-left hidden md:block">
+				Help to improve your earnings
+				<br /> from more{" "}
+				<span className="text-black inline">{displayedText}</span>
+				<span className="blinking-cursor inline">|</span>
+			</h1>
+		</div>
 	);
 };
 

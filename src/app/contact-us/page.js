@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 import "../../styles/Contact.css";
-import Footer from "../../components/Footer";
+
 export default function ContactUs() {
 	const [formData, setFormData] = useState({
 		name: "",
@@ -161,9 +161,6 @@ export default function ContactUs() {
 						</div>
 					</div>
 				</div>
-			</div>
-			<div>
-				<Footer />
 			</div>
 		</div>
 	);
