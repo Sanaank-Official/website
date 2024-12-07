@@ -63,8 +63,8 @@ const About = () => {
 
 						<p className="text-lg text-gray-600 leading-relaxed text-left">
 							At Sanaank, we believe that knowledge is more than
-							power—it's a gateway to endless possibilities. We
-							are a mobile gaming platform dedicated to turning
+							power—it&apos;s a gateway to endless possibilities.
+							We are a mobile gaming platform dedicated to turning
 							your love for learning and trivia into real-world
 							rewards.
 						</p>
