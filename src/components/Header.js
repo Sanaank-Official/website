@@ -124,14 +124,10 @@ export default function Header() {
                 max-md:hidden
             `}>
 				<Image
-					src={
-						isScrolled
-							? "/images/logo.png"
-							: "/images/logo-light.png"
-					}
+					src="/images/logot.png"
 					alt="Sanaank Logo"
-					width={70}
-					height={21}
+					width={60}
+					height={60}
 				/>
 				<ul className="flex space-x-8 text-header text-base tracking-wide font-bold font-inter">
 					<li className="relative group">
@@ -168,7 +164,7 @@ export default function Header() {
 					</li>
 				</ul>
 				<Link
-					href="/"
+					href="/#download"
 					className={`
         flex items-center justify-center space-x-2 px-7 py-1 text-white font-bold rounded-full 
         transition duration-100 
@@ -185,15 +181,15 @@ export default function Header() {
 			{/* Mobile Header */}
 			<nav
 				className={`relative z-50 w-full bg-white shadow-md transition-all duration-1000 md:hidden ${
-					isMobileMenuOpen ? "h-[320px]" : "h-[70px]"
+					isMobileMenuOpen ? "h-[320px]" : "h-[80px]"
 				}`}
 				ref={menuRef}>
 				<div className="header-container">
 					<Image
-						src="/images/logo.png"
+						src="/images/logot.png"
 						alt="Sanaank Logo"
 						width={50}
-						height={15}
+						height={50}
 					/>
 
 					<Link href="/#download" className="download-button">
