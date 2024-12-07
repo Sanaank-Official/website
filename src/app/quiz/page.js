@@ -164,35 +164,36 @@ export default function Quizzes() {
 			<section className="relative w-full min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-yellow-400 to-yellow-600 text-white overflow-hidden md:p-40">
 				{/* Floating Particles Effect */}
 				<div className="absolute inset-0 pointer-events-none">
-					{[...Array(20)].map((_, i) => (
-						<motion.div
-							key={i}
-							initial={{
-								x: Math.random() * window.innerWidth,
-								y: Math.random() * window.innerHeight,
-								opacity: 0,
-							}}
-							animate={{
-								x: [
-									Math.random() * window.innerWidth,
-									Math.random() * window.innerWidth,
-									Math.random() * window.innerWidth,
-								],
-								y: [
-									Math.random() * window.innerHeight,
-									Math.random() * window.innerHeight,
-									Math.random() * window.innerHeight,
-								],
-								opacity: [0, 0.5, 0],
-							}}
-							transition={{
-								duration: Math.random() * 10 + 5,
-								repeat: Infinity,
-								repeatType: "loop",
-							}}
-							className="absolute w-2 h-2 bg-white/30 rounded-full"
-						/>
-					))}
+					{typeof window !== "undefined" &&
+						[...Array(20)].map((_, i) => (
+							<motion.div
+								key={i}
+								initial={{
+									x: Math.random() * window.innerWidth,
+									y: Math.random() * window.innerHeight,
+									opacity: 0,
+								}}
+								animate={{
+									x: [
+										Math.random() * window.innerWidth,
+										Math.random() * window.innerWidth,
+										Math.random() * window.innerWidth,
+									],
+									y: [
+										Math.random() * window.innerHeight,
+										Math.random() * window.innerHeight,
+										Math.random() * window.innerHeight,
+									],
+									opacity: [0, 0.5, 0],
+								}}
+								transition={{
+									duration: Math.random() * 10 + 5,
+									repeat: Infinity,
+									repeatType: "loop",
+								}}
+								className="absolute w-2 h-2 bg-white/30 rounded-full"
+							/>
+						))}
 				</div>
 
 				<motion.div
@@ -314,10 +315,11 @@ export default function Quizzes() {
 
 			{/* Final CTA */}
 			<section
-				className="py-16 text-white text-center relative overflow-hidden"
-				style={{
-					backgroundImage: `url('/images/background/3.jpg')`,
-				}}>
+				className="py-16 text-white bg-customYellow text-center relative overflow-hidden"
+				// style={{
+				// 	backgroundImage: `url('/images/background/3.jpg')`,
+				// }}
+			>
 				<motion.div
 					initial={{ opacity: 0, scale: 0.9 }}
 					whileInView={{ opacity: 1, scale: 1 }}
@@ -327,7 +329,7 @@ export default function Quizzes() {
 					<h2 className="text-3xl md:text-5xl font-bold mb-6">
 						Your Knowledge, Your Reward
 					</h2>
-					<p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+					<p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
 						Join thousands of quiz enthusiasts and turn your
 						knowledge into exciting rewards
 					</p>
