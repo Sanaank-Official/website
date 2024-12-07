@@ -30,6 +30,7 @@
 }
 .contact-us .hero-subtitle {
 	font-size: 1.25rem;
+	font-weight: 500;
 	color: black;
 	margin-top: 0.5rem;
 	opacity: 0;
@@ -56,7 +57,7 @@
 	width: 30%;
 	height: 0.2rem;
 	margin: 1rem auto;
-	background-color: #facc15;
+	background-color: #f6b23c;
 }
 
 .contact-us .form-container {
@@ -93,7 +94,7 @@
 }
 
 .icon {
-	color: #facc15;
+	color: #f6b23c;
 }
 
 .contact-us input,
@@ -107,8 +108,8 @@
 
 .contact-us button {
 	width: fit-content;
-	padding: 0.35rem 0.8rem;
-	background-color: #facc15;
+	padding: 0.4rem 1.25rem;
+	background-color: #f6b23c;
 	color: white;
 	font-weight: bold;
 	letter-spacing: 0.075rem;
@@ -158,7 +159,7 @@
 }
 
 .contact-us .card:last-child {
-	background-color: #facc15;
+	background-color: #f6b23c;
 	color: white;
 }
 
