@@ -99,7 +99,7 @@ export default function Header() {
 							&nbsp;|&nbsp;
 						</span>
 						<a href="pricing.html" className="hover:text-gray-200">
-							Today's Deal: Get 50% Discount!
+							Today&apos;s Deal: Get 50% Discount!
 						</a>
 					</div>
 				</div>
