@@ -113,17 +113,17 @@ export default function Footer() {
 								</li>
 								<li className="flex space-x-4 pt-2">
 									<a
-										href="#"
+										href="https://www.facebook.com/SanaankGaming"
 										className="p-2 rounded-full bg-customYellow text-white">
 										<FaFacebook size={20} />
 									</a>
 									<a
-										href="#"
+										href="https://www.x.com/Sanaank"
 										className="p-2 rounded-full bg-customYellow text-white">
 										<FaTwitter size={20} />
 									</a>
 									<a
-										href="#"
+										href="https://www.instagram.com/SanaankOfficial"
 										className="p-2 rounded-full bg-customYellow text-white">
 										<FaInstagram size={20} />
 									</a>
@@ -145,17 +145,17 @@ export default function Footer() {
 						{/* Social Media */}
 						<div className="flex space-x-4 mb-2 mt-2 md:hidden">
 							<a
-								href="#"
+								href="https://www.facebook.com/SanaankGaming"
 								className="p-2 rounded-full bg-customYellow text-white">
 								<FaFacebook size={20} />
 							</a>
 							<a
-								href="#"
+								href="https://www.x.com/Sanaank"
 								className="p-2 rounded-full bg-customYellow text-white">
 								<FaTwitter size={20} />
 							</a>
 							<a
-								href="#"
+								href="https://www.instagram.com/SanaankOfficial"
 								className="p-2 rounded-full bg-customYellow text-white">
 								<FaInstagram size={20} />
 							</a>

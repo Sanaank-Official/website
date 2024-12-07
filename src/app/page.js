@@ -131,12 +131,12 @@ const Home = () => {
 						</p>
 						<div className="flex md:justify-start md:space-x-4 gap-4">
 							<motion.a
-								href="#features"
+								href="/quiz"
 								className="w-40 px-4 py-2 text-white font-bold rounded-full bg-black transition duration-100 text-center">
 								LEARN MORE
 							</motion.a>
 							<motion.a
-								href="#download"
+								href="/"
 								className="w-40 px-4 py-2 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 border border-black text-center">
 								DOWNLOAD
 							</motion.a>
@@ -355,14 +355,14 @@ const Home = () => {
 								{/* Add "LEARN MORE" and "DOWNLOAD" buttons */}
 								<div className="flex space-x-4 mt-8">
 									<motion.a
-										href="#features"
+										href="/quiz"
 										whileHover={{ scale: 1.1 }}
 										whileTap={{ scale: 0.9 }}
 										className="px-7 py-1 text-white font-bold rounded-full bg-black transition duration-100 h-8">
 										LEARN MORE
 									</motion.a>
 									<motion.a
-										href="#download"
+										href="/"
 										whileHover={{ scale: 1.1 }}
 										whileTap={{ scale: 0.9 }}
 										className="px-7 py-1 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 h-8 border border-black">
