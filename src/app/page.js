@@ -245,7 +245,7 @@ const Home = () => {
 						hidden: { opacity: 0, y: 50 },
 						visible: { opacity: 1, y: 0 },
 					}}>
-					<div className="flex flex-col justify-center items-center md:flex-row md:items-center">
+					<div className="flex flex-col justify-around items-center md:flex-row md:items-center">
 						<motion.div
 							initial={{ scale: 0.8, opacity: 0 }}
 							whileInView={{ scale: 1, opacity: 1 }}
@@ -290,7 +290,7 @@ const Home = () => {
 											stiffness: 150,
 										},
 									}}
-									className="text-sm font-bold text-customYellow bg-yellow-100 py-2 px-4 rounded-md tracking-widest">
+									className="text-sm text-center font-bold text-customYellow bg-yellow-100 py-2 px-4 rounded-md tracking-widest">
 									PROFILE
 								</motion.span>
 							</div>
@@ -378,13 +378,13 @@ const Home = () => {
 			<div>
 				<FAQSection />
 			</div>
-			<div>
+			<div id="reviews">
 				<CustomerReviews />
 			</div>
 			<div>
 				<StateSection />
 			</div>
-			<div>
+			<div id="download">
 				<DownloadSection />
 			</div>
 		</div>

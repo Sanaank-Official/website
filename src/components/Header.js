@@ -77,13 +77,19 @@ export default function Header() {
 				<div className="container mx-auto flex justify-around items-center px-4">
 					{/* Left Section (Hidden on Small Screens) */}
 					<div className="hidden sm:flex space-x-4">
-						<a href="#" className="hover:text-gray-200">
+						<a
+							href="https://www.facebook.com/SanaankGaming"
+							className="hover:text-gray-200">
 							<i className="fa fa-facebook"></i>
 						</a>
-						<a href="#" className="hover:text-gray-200">
+						<a
+							href="https://www.x.com/Sanaank"
+							className="hover:text-gray-200">
 							<i className="fa fa-twitter"></i>
 						</a>
-						<a href="#" className="hover:text-gray-200">
+						<a
+							href="https://www.instagram.com/SanaankOfficial"
+							className="hover:text-gray-200">
 							<i className="fa fa-instagram"></i>
 						</a>
 					</div>
@@ -91,14 +97,12 @@ export default function Header() {
 					{/* Right Section */}
 					<div className="text-sm">
 						<span className="hidden sm:inline">
-							<a
-								href="download.html"
-								className="hover:text-gray-200">
+							<a href="/" className="hover:text-gray-200">
 								Latest Version Available!
 							</a>
 							&nbsp;|&nbsp;
 						</span>
-						<a href="pricing.html" className="hover:text-gray-200">
+						<a href="/" className="hover:text-gray-200">
 							Today&apos;s Deal: Get 50% Discount!
 						</a>
 					</div>
@@ -162,7 +166,7 @@ export default function Header() {
 					</li>
 				</ul>
 				<a
-					href="#"
+					href="/"
 					className={`
         flex items-center justify-center space-x-2 px-7 py-1 text-white font-bold rounded-full 
         transition duration-100 
@@ -190,7 +194,7 @@ export default function Header() {
 						height={15}
 					/>
 
-					<a href="#" className="download-button">
+					<a href="/" className="download-button">
 						<i
 							className="fa fa-arrow-down text-white text-xs"
 							style={{ marginTop: "3px" }} // Space between icon and text

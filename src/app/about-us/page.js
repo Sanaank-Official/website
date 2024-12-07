@@ -16,57 +16,61 @@ const About = () => {
 				}}>
 				<div className="container mx-auto text-center">
 					<motion.h1
-						initial={{ opacity: 0, y: -20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 1.5 }}
+						initial={{ opacity: 0, y: -50 }}
+						animate={{ opacity: 1, y: 10 }}
+						transition={{ duration: 1 }}
 						className="text-5xl text-white font-bold drop-shadow-md mb-4">
 						About Us
 					</motion.h1>
 					<motion.p
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1, delay: 0.3 }}
-						className="text-xl text-black mt-2">
+						className="text-xl text-black mt-4">
 						Get to know us better
 					</motion.p>
 				</div>
 			</section>
 
 			{/* 2. Welcome Section */}
-			<motion.section
-				className="py-16 px-8 bg-white"
-				initial={{ opacity: 0, y: 50 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, amount: 0.5 }}
-				transition={{ duration: 0.8 }}>
+			<section className="py-16 px-8 bg-white">
 				<div className="container mx-auto flex flex-col md:flex-row items-center">
-					<div className="md:w-1/2 mb-8 md:mb-0 md:mr-12">
+					<motion.div
+						className="md:w-1/2 mb-8 md:mb-0 md:mr-12"
+						initial={{ opacity: 0, x: -50 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.5 }}>
 						<Image
 							src="/images/misc/5.png"
 							alt="Sanaank Welcome"
 							width={500}
 							height={500}
-							// className="rounded-lg shadow-lg"
+							priority
 						/>
-					</div>
-					<div className="md:w-1/2">
-						<h2 className="text-4xl mb-3 font-bold text-gray-800 text-left">
+					</motion.div>
+					<motion.div
+						className="md:w-1/2"
+						initial={{ opacity: 0, x: 50 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.5, delay: 0.2 }}>
+						<h2 className="text-4xl font-bold pb-3 text-gray-800 text-left">
 							Welcome to{" "}
 							<span className="text-yellow-500">Sanaank</span>
 						</h2>
 						<h2 className="text-3xl font-bold mb-6 text-gray-800 text-left">
 							Where Knowledge Meets Rewards!
 						</h2>
+
 						<p className="text-lg text-gray-600 leading-relaxed text-left">
 							At Sanaank, we believe that knowledge is more than
-							power—it&apos;s a gateway to endless possibilities.
-							We are a mobile gaming platform dedicated to turning
+							power—it's a gateway to endless possibilities. We
+							are a mobile gaming platform dedicated to turning
 							your love for learning and trivia into real-world
 							rewards.
 						</p>
-					</div>
+					</motion.div>
 				</div>
-			</motion.section>
+			</section>
 
 			{/* 3. Key Features */}
 			<section className="py-16 px-8 bg-[rgb(253,253,240)]">
@@ -134,7 +138,7 @@ const About = () => {
 
 			{/* 4. Our Vision Section */}
 			<motion.section
-				className="py-16 px-8 bg-white"
+				className="py-16 px-6 bg-white"
 				initial={{ opacity: 0, y: -50 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.5 }}
@@ -154,7 +158,7 @@ const About = () => {
 
 			{/* 5. Call to Action */}
 			<section
-				className="bg-cover bg-center py-16"
+				className="bg-cover bg-center py-16 px-6"
 				style={{
 					backgroundImage: `url('/images/background/3.jpg')`,
 				}}>

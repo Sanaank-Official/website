@@ -66,7 +66,7 @@ export default function Footer() {
 							<ul className="space-y-2">
 								<li>
 									<Link
-										href="/"
+										href="/#features"
 										className="text-sm hover:text-gray-600 relative group">
 										Features
 										<span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
@@ -74,7 +74,7 @@ export default function Footer() {
 								</li>
 								<li>
 									<Link
-										href="/"
+										href="/#reviews"
 										className="text-sm hover:text-gray-600 relative group">
 										Reviews
 										<span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
@@ -82,7 +82,7 @@ export default function Footer() {
 								</li>
 								<li>
 									<Link
-										href="/"
+										href="/#download"
 										className="text-sm hover:text-gray-600 relative group">
 										Download
 										<span className="block absolute w-0 h-[2px] bg-gray-600 left-0 bottom-0 transition-all duration-300 group-hover:w-full"></span>
@@ -113,17 +113,17 @@ export default function Footer() {
 								</li>
 								<li className="flex space-x-4 pt-2">
 									<a
-										href="#"
+										href="https://www.facebook.com/SanaankGaming"
 										className="p-2 rounded-full bg-customYellow text-white">
 										<FaFacebook size={20} />
 									</a>
 									<a
-										href="#"
+										href="https://www.x.com/Sanaank"
 										className="p-2 rounded-full bg-customYellow text-white">
 										<FaTwitter size={20} />
 									</a>
 									<a
-										href="#"
+										href="https://www.instagram.com/SanaankOfficial"
 										className="p-2 rounded-full bg-customYellow text-white">
 										<FaInstagram size={20} />
 									</a>
@@ -145,17 +145,17 @@ export default function Footer() {
 						{/* Social Media */}
 						<div className="flex space-x-4 mb-2 mt-2 md:hidden">
 							<a
-								href="#"
+								href="https://www.facebook.com/SanaankGaming"
 								className="p-2 rounded-full bg-customYellow text-white">
 								<FaFacebook size={20} />
 							</a>
 							<a
-								href="#"
+								href="https://www.x.com/Sanaank"
 								className="p-2 rounded-full bg-customYellow text-white">
 								<FaTwitter size={20} />
 							</a>
 							<a
-								href="#"
+								href="https://www.instagram.com/SanaankOfficial"
 								className="p-2 rounded-full bg-customYellow text-white">
 								<FaInstagram size={20} />
 							</a>
