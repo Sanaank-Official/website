@@ -8,14 +8,53 @@ import {
 	useAnimation,
 	AnimatePresence,
 } from "framer-motion";
+import CustomerReviews from "../components/CustomerReviews";
 import FAQSection from "../components/FAQ";
 import TypingEffect from "../components/TypingEffect";
 import StateSection from "../components/Statesections";
-import Footer from "../components/Footer";
+import DownloadSection from "../components/DownloadSection";
 import { MdAccessAlarm, MdCategory, MdMonetizationOn } from "react-icons/md";
 import Link from "next/link";
 
+const containerVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			delayChildren: 0.3,
+			staggerChildren: 0.2,
+		},
+	},
+};
+
 const itemVariants = {
+	hidden: {
+		opacity: 0,
+		scale: 0.9,
+		y: 50,
+		filter: "blur(0px)",
+	},
+	visible: {
+		opacity: 1,
+		scale: 1,
+		y: 0,
+		filter: "blur(0px)",
+		transition: {
+			type: "spring",
+			damping: 12,
+			stiffness: 100,
+			duration: 0.8,
+		},
+	},
+	hover: {
+		scale: 1.05,
+		transition: {
+			type: "spring",
+			stiffness: 300,
+		},
+	},
+};
+const itemVariants2 = {
 	hidden: { opacity: 0, y: 20 }, // Start with opacity 0 and below
 	visible: {
 		opacity: 1,
@@ -38,9 +77,6 @@ const fadeOutImageVariants = {
 	visible: { opacity: 1, x: 0 }, // Image moves right
 };
 const Home = () => {
-	const words = ["Productive", "Creative", "Relax", "Confidence"];
-	const [setCurrentWordIndex] = useState(0);
-	const [setShowCursor] = useState(true);
 	const [selected, setSelected] = useState("Download & Register");
 
 	// Refs for scroll animations
@@ -48,12 +84,13 @@ const Home = () => {
 	const ref2 = useRef(null);
 	const ref3 = useRef(null);
 	const ref4 = useRef(null);
+	const ref5 = useRef(null);
 
 	// Intersection observers for animations
 	const inView1 = useInView(ref1, { once: true, amount: 0.2 });
 	const inView2 = useInView(ref2, { once: true, amount: 0.2 });
 	const inView3 = useInView(ref3, { once: true, amount: 0.2 });
-	const inView4 = useInView(ref4, { once: true, amount: 0.2 });
+	const inView5 = useInView(ref5, { once: true, amount: 0.2 });
 
 	return (
 		<div className="overflow-x-hidden bg-white">
@@ -62,7 +99,7 @@ const Home = () => {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1 }}
-				className="relative min-h-screen flex items-center justify-center">
+				className="relative min-h-screen flex justify-center md:p-28">
 				<div className="absolute inset-0">
 					<Image
 						src="/images/background/3.jpg"
@@ -73,67 +110,64 @@ const Home = () => {
 						quality={90}
 					/>
 				</div>
-				<div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+				<div
+					className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 
+    flex flex-col md:flex-row md:gap-8 gap-4 items-center justify-items-center">
+					{/* Text Section */}
 					<motion.div
 						initial="hidden"
 						animate="visible"
 						variants={fadeOutVariants}
 						transition={{ duration: 1 }}
-						className="text-center md:text-left space-y-6 mt-36 md:mt-0" // Added margin-top for mobile view
-					>
-						{/* Typing Effect Heading */}
+						className="flex-1 text-center md:text-left space-y-6 mt-8 md:mt-0">
 						<h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
 							<TypingEffect />
 						</h1>
 						<p className="text-base md:text-lg text-black text-left mb-8">
 							At Sanaank, we bring the thrill of gaming and the
-							power of knowledge together! Our mobile gaming
-							platform is designed for curious minds and
-							competitive spirits.
+							power of knowledge together! <br />
+							Our mobile gaming platform is designed for curious
+							minds and competitive spirits.
 						</p>
 						<div className="flex md:justify-start md:space-x-4 gap-4">
 							<motion.a
 								href="#features"
-								whileHover={{ scale: 1.1 }}
-								whileTap={{ scale: 0.9 }}
 								className="w-40 px-4 py-2 text-white font-bold rounded-full bg-black transition duration-100 text-center">
 								LEARN MORE
 							</motion.a>
 							<motion.a
 								href="#download"
-								whileHover={{ scale: 1.1 }}
-								whileTap={{ scale: 0.9 }}
-								className="w-40 px-4 py-2 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 border text-center">
+								className="w-40 px-4 py-2 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 border border-black text-center">
 								DOWNLOAD
 							</motion.a>
 						</div>
 					</motion.div>
 
-					{/* Image section */}
+					{/* Image Section */}
 					<motion.div
 						initial="hidden"
 						animate="visible"
 						variants={fadeOutImageVariants}
 						transition={{ duration: 1 }}
-						className="flex justify-center items-center mt-8 md:mt-0">
+						className="flex-initial md:max-w-[50%] max-w-[90%] min-w-[200px] ">
 						<Image
 							src="/images/misc/1.png"
 							alt="Side Image"
 							width={528}
 							height={658}
-							className="animate-fade-in max-w-full h-auto"
+							className="w-full h-auto"
 						/>
 					</motion.div>
 				</div>
 			</motion.div>
 
-			{/* Features Section with Improved Responsiveness */}
+			{/* Features Section with Enhanced Animation */}
 			<motion.div
 				id="features"
 				ref={ref1}
 				initial="hidden"
 				animate={inView1 ? "visible" : "hidden"}
-				variants={itemVariants}
+				variants={containerVariants}
 				className="bg-[rgb(253,253,240)] py-16 px-4">
 				<div className="container mx-auto">
 					<motion.div
@@ -145,15 +179,13 @@ const Home = () => {
 							DISCOVER
 						</motion.span>
 						<h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-4">
-							Top Features
+							Why Choose Sanaank?
 						</h2>
-						<div className="w-20 h-[0.1rem] bg-customYellow mx-auto mt-4"></div>
+						<div className="w-24 h-[0.1rem] bg-customYellow mx-auto mt-4"></div>
 					</motion.div>
 
 					<motion.div
 						variants={itemVariants}
-						initial="hidden"
-						animate={inView1 ? "visible" : "hidden"}
 						className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
 						{[
 							{
@@ -175,7 +207,8 @@ const Home = () => {
 							<motion.div
 								key={index}
 								variants={itemVariants}
-								className="bg-white p-10 rounded-lg shadow-md relative flex flex-col justify-between transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+								whileHover="hover"
+								className="bg-white p-10 rounded-lg shadow-md relative flex flex-col justify-between overflow-hidden">
 								{/* Icon */}
 								<div className="bg-customYellow text-white rounded-full w-24 h-24 absolute left-4 top-1/2 transform -translate-y-1/2 flex items-center justify-center text-3xl">
 									{feature.icon}
@@ -186,7 +219,7 @@ const Home = () => {
 									<h3 className="text-xl font-bold text-gray-800 mb-2">
 										{feature.title}
 									</h3>
-									<p className="text-gray-600">
+									<p className="text-customGray">
 										{feature.desc}
 									</p>
 								</div>
@@ -263,7 +296,7 @@ const Home = () => {
 							</div>
 
 							<h2 className="text-4xl font-bold mb-6 text-gray-800">
-								Enhance Your Productivity
+								How It Works?
 							</h2>
 
 							{/* Buttons and Dynamic Text */}
@@ -282,7 +315,7 @@ const Home = () => {
 											className={`px-5 py-3 rounded-md font-semibold w-full ${
 												selected === item
 													? "bg-yellow-400 text-white"
-													: "bg-white text-yellow-300"
+													: "bg-yellow-50 text-yellow-300 text-shadow-yellow"
 											} border border-yellow-300 shadow-md md:w-auto`}
 											onClick={() => setSelected(item)}>
 											{item}
@@ -296,7 +329,7 @@ const Home = () => {
 									initial={{ opacity: 0, x: -20 }}
 									animate={{ opacity: 1, x: 0 }}
 									transition={{ duration: 0.4 }}
-									className="text-gray-700 text-lg">
+									className="text-customGray text-lg">
 									{selected === "Download & Register" && (
 										<p>
 											Install the Sanaank app and create
@@ -332,7 +365,7 @@ const Home = () => {
 										href="#download"
 										whileHover={{ scale: 1.1 }}
 										whileTap={{ scale: 0.9 }}
-										className="px-7 py-1 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 h-8 border">
+										className="px-7 py-1 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 h-8 border border-black">
 										DOWNLOAD
 									</motion.a>
 								</div>
@@ -345,220 +378,14 @@ const Home = () => {
 			<div>
 				<FAQSection />
 			</div>
-
-			{/* Customer Reviews Section */}
-			<div className="bg-gray-50 py-16">
-				<div className="container mx-auto px-8 md:px-16 lg:px-24">
-					{/* Discover and Latest Buttons */}
-					<div className="text-center mb-4">
-						<span className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md inline-block tracking-widest">
-							LATEST
-						</span>
-					</div>
-
-					{/* Heading with underline */}
-					<h2 className="text-3xl font-bold text-center mb-4 text-gray-800">
-						Customer Reviews
-					</h2>
-					<div className="w-20 h-[0.1rem] bg-customYellow mx-auto mb-12"></div>
-
-					{/* Customer Reviews Grid */}
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-						{/* Review Box 1 */}
-						<div
-							className="bg-[#f0f4fd] rounded-lg p-8 shadow-md transform transition-all duration-300"
-							style={{ width: "370px", height: "450px" }}>
-							{/* yellow stars */}
-							<div className="flex mb-6 mt-4">
-								{[...Array(5)].map((_, index) => (
-									<svg
-										key={index}
-										className="w-5 h-5 text-customYellow"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 20 20"
-										aria-hidden="true">
-										<path
-											fillRule="evenodd"
-											d="M10 15l-5.19 2.73 1.41-5.67-4.61-4.03 5.72-.47L10 0l2.67 7.06 5.72.47-4.61 4.03 1.41 5.67L10 15z"
-											clipRule="evenodd"
-										/>
-									</svg>
-								))}
-							</div>
-							{/* "Excellent" text */}
-							<p className="font-bold text-lg text-gray-800 mb-4 text-left">
-								A Game-Changer for Quiz Lovers!
-							</p>
-							{/* Review text */}
-							<p className="text-gray-700 text-left leading-relaxed">
-								I&apos;ve always loved trivia games, but Sanaank
-								takes it to the next level! The app is super
-								easy to use, and the variety of quizzes keeps
-								things exciting. I started with a ₹50 quiz just
-								to test the waters, and guess what? I won
-								₹50,000 on my first try! It&apos;s fun,
-								rewarding, and a great way to challenge
-								yourself. Highly recommend!
-							</p>
-							{/* Reviewer Name */}
-							<p className="mt-6 text-customYellow font-bold text-left">
-								- Rohan Sharma, Mumbai
-							</p>
-						</div>
-
-						{/* Review Box 2 */}
-						<div
-							className="bg-[#f0f4fd] rounded-lg p-8 shadow-md transform transition-all duration-300"
-							style={{ width: "370px", height: "450px" }}>
-							{/* yellow stars */}
-							<div className="flex mb-6 mt-4">
-								{[...Array(5)].map((_, index) => (
-									<svg
-										key={index}
-										className="w-5 h-5 text-customYellow"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 20 20"
-										aria-hidden="true">
-										<path
-											fillRule="evenodd"
-											d="M10 15l-5.19 2.73 1.41-5.67-4.61-4.03 5.72-.47L10 0l2.67 7.06 5.72.47-4.61 4.03 1.41 5.67L10 15z"
-											clipRule="evenodd"
-										/>
-									</svg>
-								))}
-							</div>
-							{/* "Excellent" text */}
-							<p className="font-bold text-lg text-gray-800 mb-4 text-left">
-								Learn, Play, and Earn – All in One App!
-							</p>
-							{/* Review text */}
-							<p className="text-gray-700 text-left leading-relaxed">
-								Sanaank is hands down the best quiz gaming app
-								I&apos;ve ever used. The quizzes are
-								well-designed and cover so many topics.
-								I&apos;ve learned a lot while playing, and the
-								cash prizes are the cherry on top. With just
-								₹50, I entered a science quiz and won ₹100,000
-								last week! This app is perfect for anyone who
-								loves knowledge and rewards.
-							</p>
-							{/* Reviewer Name */}
-							<p className="mt-6 text-customYellow font-bold text-left">
-								- Priya Verma, Bangalore
-							</p>
-						</div>
-
-						{/* Review Box 3 */}
-						<div
-							className="bg-[#f0f4fd] rounded-lg p-8 shadow-md transform transition-all duration-300"
-							style={{ width: "370px", height: "450px" }}>
-							{/* yellow stars */}
-							<div className="flex mb-6 mt-4">
-								{[...Array(5)].map((_, index) => (
-									<svg
-										key={index}
-										className="w-5 h-5 text-customYellow"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 20 20"
-										aria-hidden="true">
-										<path
-											fillRule="evenodd"
-											d="M10 15l-5.19 2.73 1.41-5.67-4.61-4.03 5.72-.47L10 0l2.67 7.06 5.72.47-4.61 4.03 1.41 5.67L10 15z"
-											clipRule="evenodd"
-										/>
-									</svg>
-								))}
-							</div>
-							{/* "Excellent" text */}
-							<p className="font-bold text-lg text-gray-800 mb-4 text-left">
-								Simple, Fun, and Rewarding!
-							</p>
-							{/* Review text */}
-							<p className="text-gray-700 text-left leading-relaxed">
-								I downloaded Sanaank out of curiosity, but now
-								I&apos;m hooked! The app is intuitive, and I
-								love how affordable it is to participate in
-								quizzes. It&apos;s a great way to test your
-								knowledge and earn extra cash. I never thought
-								I&apos;d win ₹75,000 for answering questions on
-								my favorite topic - sports! Thanks, Sanaank, for
-								this amazing platform.
-							</p>
-							{/* Reviewer Name */}
-							<p className="mt-6 text-customYellow font-bold text-left">
-								- Arjun Mehta, Delhi
-							</p>
-						</div>
-					</div>
-				</div>
+			<div>
+				<CustomerReviews />
 			</div>
-
 			<div>
 				<StateSection />
 			</div>
-
-			{/* Download Section */}
-			<div className="bg-[#f7f8fc] pt-16 flex items-center justify-center">
-				{/* Center-align the entire section */}
-				<div className="container mx-auto flex flex-col lg:flex-row justify-around items-center gap-8 px-4">
-					{/* Left Side: Text Content */}
-					<div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-auto">
-						{/* Download Heading */}
-						<span className="text-sm font-bold text-customYellow bg-yellow-100 py-1 px-3 rounded-md mb-4 tracking-widest">
-							DOWNLOAD
-						</span>
-						<h2 className="text-3xl font-bold mb-5 text-gray-800">
-							Available on iOS and Android
-						</h2>
-						<p className="text-gray-800 leading-loose mb-8 text-sm lg:text-base">
-							Transform your spare time into exciting moments of
-							learning, fun, and rewards.
-							<br />
-							Sanaank is more than just a gaming app—it&apos;s a
-							platform where knowledge pays off.
-							<br />
-							<strong>
-								Join thousands of winners now! Download the
-								Sanaank app and start winning.
-							</strong>
-						</p>
-						<div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-							<a href="#">
-								<Image
-									src="/images/misc/download-appstore.png"
-									alt="App Store"
-									width={180}
-									height={59}
-								/>
-							</a>
-							<a href="#">
-								<Image
-									src="/images/misc/download-playstore.png"
-									alt="Play Store"
-									width={180}
-									height={59}
-								/>
-							</a>
-						</div>
-					</div>
-					{/* Right Side: Phone Image */}
-					<div className="flex-shrink-0">
-						<Image
-							src="/images/misc/2.png"
-							alt="User Phone"
-							width={300}
-							height={600}
-							className="animate-fade-in"
-						/>
-					</div>
-				</div>
-			</div>
-
 			<div>
-				<Footer />
+				<DownloadSection />
 			</div>
 		</div>
 	);
