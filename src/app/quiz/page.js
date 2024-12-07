@@ -53,35 +53,80 @@ export default function Quizzes() {
       transition: { duration: 0.3 },
     },
   };
-
+  const staggerContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+  // Advanced scroll-based animation variants
+  const scrollVariants = {
+    offscreen: {
+      y: 100,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
+  const staggerItemVariants = {
+    hidden: {
+      opacity: 0,
+      x: -50,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
   const features = [
     {
       icon: faGamepad,
       title: "Diverse Quiz Universes",
       description:
         "Explore endless knowledge realms across multiple categories",
-      additionalInfo:
-        "From science to pop culture, challenge yourself in unique quiz dimensions",
+      color: "bg-purple-500",
+      textColor: "text-purple-500",
+      gradient: "from-purple-500 to-purple-700",
     },
     {
       icon: faCoins,
       title: "Reward Ecosystem",
       description: "Transform knowledge into tangible rewards",
-      additionalInfo:
-        "Competitive entry fees with massive prize pools up to ₹1,00,000",
+      color: "bg-green-500",
+      textColor: "text-green-500",
+      gradient: "from-green-500 to-green-700",
     },
     {
       icon: faLightbulb,
       title: "Intelligent Matchmaking",
       description: "Compete with players of similar skill levels",
-      additionalInfo: "Smart algorithm ensures fair and exciting competitions",
+      color: "bg-blue-500",
+      textColor: "text-blue-500",
+      gradient: "from-blue-500 to-blue-700",
     },
     {
       icon: faGraduationCap,
       title: "Learning Pathways",
       description: "Continuous growth through adaptive quizzes",
-      additionalInfo:
-        "Personalized quiz recommendations based on your performance",
+      color: "bg-orange-500",
+      textColor: "text-orange-500",
+      gradient: "from-orange-500 to-orange-700",
     },
   ];
 
@@ -167,22 +212,22 @@ export default function Quizzes() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="bg-white text-yellow-600 px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:bg-yellow-100 transition-all"
+            className="bg-white text-yellow-600 px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:bg-yellow-50 transition-all"
           >
             Start Your Quiz Journey
           </motion.button>
         </motion.div>
       </section>
 
-      {/* Features Section with Interactive Hover */}
-      <section className="py-16 px-6 md:px-16">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="text-center mb-12"
-        >
+      {/* Features Section with Staggered Scroll Animation */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={staggerContainerVariants}
+        className="py-16 px-6 md:px-16 bg-white"
+      >
+        <motion.div variants={scrollVariants} className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Innovative Quiz Experiences
           </h2>
@@ -196,50 +241,29 @@ export default function Quizzes() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
-              whileHover="hover"
-              onHoverStart={() => setActiveFeature(index)}
-              onHoverEnd={() => setActiveFeature(null)}
-              className={`
-                                relative overflow-hidden rounded-2xl p-6 text-center 
-                                transition-all duration-300 shadow-lg
-                                ${
-                                  activeFeature === index
-                                    ? "bg-yellow-500 text-white scale-105"
-                                    : "bg-white text-gray-800"
-                                }
-                            `}
+              variants={staggerItemVariants}
+              className={`relative group overflow-hidden rounded-3xl p-6 text-center 
+                transition-all duration-300 shadow-xl hover:shadow-2xl 
+                bg-gradient-to-br ${feature.gradient} text-white`}
             >
               <div
                 className={`
-                                mb-4 w-20 h-20 mx-auto rounded-full flex items-center justify-center
-                                ${
-                                  activeFeature === index
-                                    ? "bg-white text-yellow-500"
-                                    : "bg-yellow-50 text-yellow-500"
-                                }
-                            `}
+                mb-4 w-24 h-24 mx-auto rounded-full flex items-center justify-center 
+                bg-white/20 group-hover:bg-white/30 transition-all duration-300
+              `}
               >
-                <FontAwesomeIcon icon={feature.icon} className="text-4xl" />
+                <FontAwesomeIcon
+                  icon={feature.icon}
+                  className="text-5xl text-white drop-shadow-md"
+                />
               </div>
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-base">{feature.description}</p>
-              <AnimatePresence>
-                {activeFeature === index && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    className="mt-4 text-sm"
-                  >
-                    {feature.additionalInfo}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
+              <p className="text-base opacity-80">{feature.description}</p>
+              <div className="absolute inset-x-0 bottom-0 h-1 bg-white/30 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
             </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Quiz Steps Section */}
       <section className="py-16 px-6 md:px-16 bg-yellow-50">
@@ -308,7 +332,7 @@ export default function Quizzes() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="bg-white text-yellow-600 px-12 py-4 rounded-full text-lg font-semibold shadow-2xl hover:bg-yellow-100 transition-all"
+            className="bg-white text-yellow-600 px-12 py-4 rounded-full text-lg font-semibold shadow-2xl hover:bg-yellow-50 transition-all"
           >
             Download Sanaank Now
           </motion.button>
