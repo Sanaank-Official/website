@@ -35,7 +35,7 @@ const TypingEffect = () => {
 
 			return () => clearTimeout(timeout); // Clear timeout on cleanup
 		}
-	}, [displayedText, isDeleting, currentWordIndex, words]);
+	}, [displayedText, isDeleting, currentWordIndex]);
 
 	return (
 		<div className="text-center mt-8">

@@ -105,7 +105,7 @@ export default function Header() {
 							&nbsp;|&nbsp;
 						</span>
 						<Link href="/" className="hover:text-gray-200">
-							Today&apos;s Deal: Get 50% Discount!
+							Today&apos;s Deal: 100% Login Bonus!
 						</Link>
 					</div>
 				</div>
