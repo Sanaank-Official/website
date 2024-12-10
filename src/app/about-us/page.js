@@ -42,10 +42,10 @@ export default function About() {
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.5 }}>
 						<Image
-							src="/images/misc/5.png"
+							src="/images/ui/1.png"
 							alt="Sanaank Welcome"
-							width={500}
-							height={500}
+							width={450}
+							height={800}
 							priority
 						/>
 					</motion.div>

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faMobileAlt,
@@ -15,11 +14,9 @@ import {
 	faGraduationCap,
 	faRocket,
 } from "@fortawesome/free-solid-svg-icons";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Quizzes() {
-	const [activeFeature, setActiveFeature] = useState(null);
-
 	// Sophisticated animation variants
 	const containerVariants = {
 		hidden: { opacity: 0 },
@@ -162,7 +159,7 @@ export default function Quizzes() {
 		<div className="w-full">
 			{/* Animated Particle-like Background Hero */}
 			<section
-				className="relative h-[50vh] md:p-40"
+				className="relative h-[50dvh] md:p-40"
 				style={{
 					backgroundImage:
 						"radial-gradient(circle, #dc8d00, #e39616, #e99f24, #f0a931, #f6b23c, #f6b23c, #f6b23c, #f6b23c, #f0a931, #e99f24, #e39616, #dc8d00)",

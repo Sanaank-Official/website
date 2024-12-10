@@ -108,6 +108,7 @@
 
 .contact-us button {
 	width: fit-content;
+	min-width: 20%;
 	padding: 0.4rem 1.25rem;
 	background-color: #f6b23c;
 	color: white;
@@ -121,6 +122,11 @@
 .contact-us button:hover {
 	background-color: #fbbf24;
 	color: white;
+}
+
+.sending::after {
+	content: "Sending";
+	animation: dots 1s steps(3, end) infinite;
 }
 
 .contact-us .info-container {
@@ -198,5 +204,20 @@
 	100% {
 		opacity: 1;
 		transform: translateY(0);
+	}
+}
+
+@keyframes dots {
+	0% {
+		content: "Sending";
+	}
+	33% {
+		content: "Sending.";
+	}
+	66% {
+		content: "Sending..";
+	}
+	100% {
+		content: "Sending...";
 	}
 }
