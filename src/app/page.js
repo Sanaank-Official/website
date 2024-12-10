@@ -99,7 +99,7 @@ const Home = () => {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1 }}
-				className="relative min-h-screen flex justify-center md:p-28">
+				className="relative min-h-[100%] flex justify-center md:p-28">
 				<div
 					className="absolute inset-0"
 					style={{
@@ -156,10 +156,10 @@ const Home = () => {
 						transition={{ duration: 1 }}
 						className="flex-initial md:max-w-[50%] max-w-[90%] min-w-[200px] ">
 						<Image
-							src="/images/misc/1.png"
+							src="/images/ui/homepage.png"
 							alt="Side Image"
-							width={528}
-							height={658}
+							width={400}
+							height={533}
 							className="w-full h-auto"
 						/>
 					</motion.div>
@@ -261,10 +261,10 @@ const Home = () => {
 								stiffness: 120,
 							}}>
 							<Image
-								src="/images/misc/5.png"
+								src="/images/ui/4.png"
 								alt="Feature Image"
-								width={540}
-								height={591}
+								width={450}
+								height={800}
 								className="md:mr-12 mb-8 md:mb-0 max-w-full h-auto"
 							/>
 						</motion.div>
@@ -363,7 +363,7 @@ const Home = () => {
 										href="#features"
 										whileHover={{ scale: 1.1 }}
 										whileTap={{ scale: 0.9 }}
-										className="px-7 py-1 text-white font-bold rounded-full bg-black transition duration-100 h-8">
+										className="px-7 py-1 text-white font-bold min-w-fit rounded-full bg-black transition duration-100 h-8">
 										LEARN MORE
 									</motion.a>
 									<motion.a
