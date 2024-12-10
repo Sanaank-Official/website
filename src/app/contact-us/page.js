@@ -9,7 +9,6 @@ import {
 	FaEnvelope,
 	FaGlobe,
 } from "react-icons/fa";
-import Image from "next/image";
 import "../../styles/Contact.css";
 
 export default function ContactUs() {
@@ -122,8 +121,10 @@ export default function ContactUs() {
 							onChange={handleChange}
 							required></textarea>
 
-						<button type="submit">
-							{sending ? "Sending..." : "Submit Form"}
+						<button
+							type="submit"
+							className={sending ? "sending text-left" : ""}>
+							{sending ? "" : "Submit Form"}
 						</button>
 					</form>
 				</div>

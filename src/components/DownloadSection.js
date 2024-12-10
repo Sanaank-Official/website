@@ -49,10 +49,10 @@ const DownloadSection = () => {
 				{/* Right Side: Phone Image */}
 				<div className="flex-shrink-0">
 					<Image
-						src="/images/misc/2.png"
+						src="/images/ui/5.png"
 						alt="User Phone"
-						width={350}
-						height={530}
+						width={450}
+						height={800}
 						className="animate-fade-in"
 					/>
 				</div>
