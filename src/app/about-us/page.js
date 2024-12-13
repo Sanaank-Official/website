@@ -177,14 +177,15 @@ export default function About() {
 						Join Sanaank today and turn your curiosity into an
 						exciting opportunity to learn, compete, and win!
 					</motion.p>
-					<motion.button
+					<motion.a
+						href="/#download"
 						initial={{ opacity: 0, scale: 0.8 }}
 						whileInView={{ opacity: 1, scale: 1 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.6 }}
 						className="bg-white text-gray-800 hover:bg-yellow-100 font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out">
 						Get Started
-					</motion.button>
+					</motion.a>
 				</div>
 			</section>
 		</div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const DownloadSection = () => {
 	return (
@@ -28,22 +29,22 @@ const DownloadSection = () => {
 						</strong>
 					</p>
 					<div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-						<a href="#">
+						<Link href="/download">
 							<Image
 								src="/images/misc/download-appstore.png"
 								alt="App Store"
 								width={180}
 								height={59}
 							/>
-						</a>
-						<a href="#">
+						</Link>
+						<Link href="/download">
 							<Image
 								src="/images/misc/download-playstore.png"
 								alt="Play Store"
 								width={180}
 								height={59}
 							/>
-						</a>
+						</Link>
 					</div>
 				</div>
 				{/* Right Side: Phone Image */}

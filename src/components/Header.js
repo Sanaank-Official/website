@@ -105,7 +105,7 @@ export default function Header() {
 							&nbsp;|&nbsp;
 						</span>
 						<Link href="/" className="hover:text-gray-200">
-							Today&apos;s Deal: 100% Login Bonus!
+							Today&apos;s Deal: Get 100% Login Bonus!
 						</Link>
 					</div>
 				</div>
@@ -123,12 +123,14 @@ export default function Header() {
                 text-lg p-8 transition-all duration-300 z-50 
                 max-md:hidden
             `}>
-				<Image
-					src="/images/logot.png"
-					alt="Sanaank Logo"
-					width={120}
-					height={52}
-				/>
+				<Link href="/">
+					<Image
+						src="/images/logot.png"
+						alt="Sanaank Logo"
+						width={120}
+						height={52}
+					/>
+				</Link>
 				<ul className="flex space-x-8 text-header text-base tracking-wide font-bold font-inter">
 					<li className="relative group">
 						<Link href="/" className="inline-block">
@@ -164,7 +166,7 @@ export default function Header() {
 					</li>
 				</ul>
 				<Link
-					href="/#download"
+					href="/download"
 					className={`
         flex items-center justify-center space-x-2 px-7 py-1 text-white font-bold rounded-full 
         transition duration-100 
@@ -185,14 +187,16 @@ export default function Header() {
 				}`}
 				ref={menuRef}>
 				<div className="header-container">
-					<Image
-						src="/images/logot.png"
-						alt="Sanaank Logo"
-						width={100}
-						height={44}
-					/>
+					<Link href="/">
+						<Image
+							src="/images/logot.png"
+							alt="Sanaank Logo"
+							width={100}
+							height={44}
+						/>
+					</Link>
 
-					<Link href="/#download" className="download-button">
+					<Link href="/download" className="download-button">
 						<i
 							className="fa fa-arrow-down text-white text-xs"
 							style={{ marginTop: "3px" }} // Space between icon and text
