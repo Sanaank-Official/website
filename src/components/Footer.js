@@ -22,7 +22,7 @@ export default function Footer() {
 						<div className="w-full lg:w-1/4 mb-8 lg:mb-0">
 							<Link href="/">
 								<Image
-									src="/images/logot.png"
+									src="/images/logotb.png"
 									alt="Sanaank Logo"
 									width={200}
 									height={200}

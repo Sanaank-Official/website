@@ -126,8 +126,8 @@ export default function Header() {
 				<Image
 					src="/images/logot.png"
 					alt="Sanaank Logo"
-					width={60}
-					height={60}
+					width={120}
+					height={52}
 				/>
 				<ul className="flex space-x-8 text-header text-base tracking-wide font-bold font-inter">
 					<li className="relative group">
@@ -188,8 +188,8 @@ export default function Header() {
 					<Image
 						src="/images/logot.png"
 						alt="Sanaank Logo"
-						width={50}
-						height={50}
+						width={100}
+						height={44}
 					/>
 
 					<Link href="/#download" className="download-button">
