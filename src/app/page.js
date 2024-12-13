@@ -141,7 +141,7 @@ const Home = () => {
 								LEARN MORE
 							</motion.a>
 							<motion.a
-								href="#download"
+								href="/download"
 								className="w-40 px-4 py-2 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 border border-black text-center">
 								DOWNLOAD
 							</motion.a>
@@ -367,7 +367,7 @@ const Home = () => {
 										LEARN MORE
 									</motion.a>
 									<motion.a
-										href="#download"
+										href="/download"
 										whileHover={{ scale: 1.1 }}
 										whileTap={{ scale: 0.9 }}
 										className="px-7 py-1 text-black font-bold rounded-full bg-transparent hover:bg-black hover:text-white transition duration-100 h-8 border border-black">
