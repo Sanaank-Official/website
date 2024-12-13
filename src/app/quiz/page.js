@@ -324,12 +324,13 @@ export default function Quizzes() {
 						Join thousands of quiz enthusiasts and turn your
 						knowledge into exciting rewards
 					</p>
-					<motion.button
+					<motion.a
+						href="/download"
 						whileHover={{ scale: 1.1 }}
 						whileTap={{ scale: 0.9 }}
 						className="bg-white text-yellow-600 px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:bg-yellow-50 transition-all">
 						Download Sanaank Now
-					</motion.button>
+					</motion.a>
 				</motion.div>
 			</section>
 		</div>
