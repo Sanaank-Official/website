@@ -1,10 +1,15 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { CheckCircle, Target, Trophy } from "lucide-react";
 
 export default function About() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<div className="max-w-full bg-gray-50">
 			{/* 1. Hero Section */}
