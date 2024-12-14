@@ -48,6 +48,7 @@ const ComingSoon = () => {
 					className="hidden md:block">
 					<Image
 						src="/images/misc/arrows.svg"
+						alt="Arrows"
 						width={400}
 						height={400}
 					/>
