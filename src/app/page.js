@@ -79,6 +79,10 @@ const fadeOutImageVariants = {
 const Home = () => {
 	const [selected, setSelected] = useState("Download & Register");
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	// Refs for scroll animations
 	const ref1 = useRef(null);
 	const ref2 = useRef(null);

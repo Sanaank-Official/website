@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -12,6 +12,10 @@ import {
 import "../../styles/Contact.css";
 
 export default function ContactUs() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",

@@ -1,9 +1,14 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const ComingSoon = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<div className="bg-gray-50 text-black min-w-full min-h-screen flex flex-col items-center justify-between">
 			{/* Animated Heading */}
