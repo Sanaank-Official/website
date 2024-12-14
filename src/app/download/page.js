@@ -106,7 +106,7 @@ const ComingSoon = () => {
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
-				transition={{ delay: 1.5, duration: 0.8 }}>
+				transition={{ duration: 0.8 }}>
 				<h3 className="text-4xl font-semibold text-customYellow">
 					Don&apos;t Miss Out!
 				</h3>
