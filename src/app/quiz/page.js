@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faMobileAlt,
@@ -14,9 +16,11 @@ import {
 	faGraduationCap,
 	faRocket,
 } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
 
 export default function Quizzes() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 	// Sophisticated animation variants
 	const containerVariants = {
 		hidden: { opacity: 0 },

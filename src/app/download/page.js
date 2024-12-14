@@ -1,9 +1,14 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const ComingSoon = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<div className="bg-gray-50 text-black min-w-full min-h-screen flex flex-col items-center justify-between">
 			{/* Animated Heading */}
@@ -106,7 +111,7 @@ const ComingSoon = () => {
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
-				transition={{ delay: 1.5, duration: 0.8 }}>
+				transition={{ duration: 0.8 }}>
 				<h3 className="text-4xl font-semibold text-customYellow">
 					Don&apos;t Miss Out!
 				</h3>
