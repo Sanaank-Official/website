@@ -11,38 +11,38 @@ const FAQSection = () => {
 	const faqsContainer1 = [
 		{
 			question: "How do I get the app for my phone?",
-			answer: "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.",
+			answer: 'Downloading our quiz gaming app is quick and easy! Visit the Google Play Store or Apple App Store, search for our app name, and tap "Install". Once installed, sign up to start playing exciting quizzes and winning real cash prizes!',
 		},
 		{
 			question: "What plan should I choose?",
-			answer: "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.",
+			answer: "Our app offers multiple participation plans to suit everyone’s budget. For beginners, we recommend starting with the basic ₹50 entry fee plan, where you can win up to ₹1 lakh. Explore higher plans as you gain confidence to maximize your winnings!",
 		},
 		{
 			question: "What happens to my app if I stop paying?",
-			answer: "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.",
+			answer: "The app remains on your device, and you can still access free features. However, access to paid quizzes or cash contests will be restricted until you resume payments or recharge your wallet.",
 		},
 		{
 			question: "Does it have in-app purchases?",
-			answer: "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.",
+			answer: "Yes, the app features secure in-app purchases for adding money to your wallet, unlocking premium quizzes, and purchasing game perks. These options enhance your gaming experience and increase your chances of winning.",
 		},
 	];
 
 	const faqsContainer2 = [
 		{
 			question: "Can I use this app on multiple devices?",
-			answer: "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.",
+			answer: "Absolutely! You can log into your account on multiple devices using the same credentials. However, for security purposes, only one device can actively participate in quizzes at a time.",
 		},
 		{
 			question: "Is my phone supported for this app?",
-			answer: "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.",
+			answer: "Our app is compatible with most Android and iOS smartphones. Ensure your device has the latest operating system and at least 2GB of RAM for the best gaming experience. Check the app store for specific device requirements.",
 		},
 		{
 			question: "How to deposit money?",
-			answer: "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.",
+			answer: 'Depositing money is simple and secure. Go to the "Wallet" section of the app, select "Add Money", and choose your preferred payment method—UPI, credit/debit card, or net banking. Follow the prompts to complete your deposit instantly.',
 		},
 		{
 			question: "How to withdraw money?",
-			answer: "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.",
+			answer: 'Withdrawing your winnings is effortless. Navigate to the "Wallet" section, select "Withdraw", and enter the amount you wish to cash out. Choose your preferred withdrawal method (bank account or UPI) and confirm. Your winnings will be transferred securely within 24-48 hours.',
 		},
 	];
 
